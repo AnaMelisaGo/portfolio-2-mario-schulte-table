@@ -12,16 +12,16 @@
     --yellow: #dcdf43;
     --black: #000000;
     --gray: #c9c9c9;
-    --block-color: #2e2626;
-    --transparent: rgba(46, 38, 38, 0.9);
-
+    --dark-gray: #2e2626;
+    --transparent-black: rgba(46, 38, 38, 0.9);
+    --transparent-white: rgba(255, 255, 255, 0.60);
 }
 
 body {
     font-family: 'Orbitron', sans-serif;
     font-size: 16px;
     background-color: var(--black);
-    color: #5f5d5d;
+    color: var(--dark-gray);
 }
 
 h1, h2, h3 {
@@ -87,19 +87,26 @@ header a {
 
 .logo h1:hover {
     border: 1px solid var(--yellow);
-    background: var(--block-color);
+    background: var(--dark-gray);
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.nav-game ul li:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
 }
 
 .nav-game ul li a:hover {
-    transform: scale(1.1);
-    transition: 0.3s;
-    background: var(--block-color);
+    background: var(--dark-gray);
+    border: 1px solid var(--yellow);
+
+
 }
 
 .game-icon {
     display: none;
-    cursor: pointer;
-    
+    position: relative;
     
 }
 
@@ -107,7 +114,7 @@ header a {
     margin: 20px 10px 20px 70px;
     color: var(--gray);
     font-size: 20px;
-
+    cursor: pointer;
 }
 
 .open .game-menu {
@@ -120,14 +127,13 @@ header a {
 
 .game-menu {
     display: none;
-    position: relative;
-    top: 0px;
-    right: -20px;
-    height: calc(50vh - 50px);
-    width: 100%;
-    background-color: var(--transparent);
+    position: absolute;
+    top: 60px;
+    right: -50px;
+    height: calc(35vh - 50px);
+    width: 250%;
+    background-color: var(--transparent-black);
     list-style-type: none;
-    
 }
 
 .game-menu li {
@@ -135,17 +141,24 @@ header a {
     
 }
 
-.game-menu a {
-    padding: 10px;
+.game-menu li a {
+    padding: 10px 3em;
     color: var(--gray);
 }
 
-.game-menu a:hover {
+.game-menu li:hover{
     transform: scale(1.1);
     transition: 0.3s;
-    border: 1px solid var(--yellow);
-    
 }
+
+.game-menu li a:hover {
+    border: 1px solid var(--yellow);
+    background: var(--dark-gray)
+}
+
+/* .game-menu li a:hover {
+    
+} */
 
 /* KEVIN POWELL TUTORIAL */
 /* header::after {
@@ -232,8 +245,16 @@ header a {
     max-width: 900px;
     margin: 0 auto;
     padding-top: 20px;
-    background: rgba(255, 255, 255, 0.60);
+    background: rgba(255, 255, 0, 0.6);
     text-align: center;
+}
+
+.welcome-player {
+    padding: 20px;
+}
+
+.help-player {
+    background: var(--transparent-white);
 }
 
 /* ---------------------------------------------- MEDIA QUERIES --------------------------- */
@@ -271,7 +292,7 @@ header a {
     }
 }
 
-@media screen and (max-width: 417px){
+@media screen and (max-width: 430px){
     .logo h1 {
         font-size: 15px;
     }
