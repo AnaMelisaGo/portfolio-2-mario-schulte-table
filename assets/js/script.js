@@ -1,7 +1,4 @@
-/* game menu */
-/* let barButton = document.getElementById('game-icon');
-barButton.addEventListener('click', myFunction); */
-
+/*Game menu toggle*/
 function toggleGameMenu(menu) {
     menu.classList.toggle('open')
-}
+};
