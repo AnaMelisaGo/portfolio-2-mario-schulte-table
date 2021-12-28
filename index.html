@@ -9,7 +9,7 @@
     <title>Mario Schulte</title>
 </head>
 <body>
-    
+    <!-- Navigation bar -->
     <header>
         <!-- Logo and heading -->
         <div class="logo">
@@ -22,7 +22,7 @@
                 </h1>
             </a>
         </div>
-        <!-- Navigation bar -->
+        <!-- Navigation menu -->
         <nav class="nav-game" id="my-nav-game">
             <ul>
                 <li>
@@ -34,34 +34,47 @@
                 <li>
                     <a href="#">Contact Us</a>
                 </li>
-                </ul>
-            </nav>
-            <div id="game-icon" class="game-icon" onclick="toggleGameMenu(this)">
-                <i class="fas fa-bars"></i>
-                <ul class="game-menu">
-                    <li>
-                        <a href="#" id="player-name">Player 1</a>
-                    </li>
-                    <li>
-                        <a href="#" id="help">Help</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact Us</a>
-                    </li>
-                    </ul>
-            </div>
-        
+            </ul>
+        </nav>
+        <!-- Navigation menu on smaller screen -->
+        <div id="game-icon" class="game-icon" onclick="toggleGameMenu(this)">
+            <i class="fas fa-bars"></i>
+            <ul class="game-menu">
+                <li>
+                    <a href="#" id="player-name">Player 1</a>
+                </li>
+                <li>
+                    <a href="#" id="help">Help</a>
+                </li>
+                <li>
+                    <a href="#">Contact Us</a>
+                </li>
+            </ul>
+        </div>    
     </header>
 
     <!-- Home section -->
     <section class="main-bg">
         <div class="main-container">
-            <div>Title</div>
-            <div>Content</div>
+            <!-- Greeting player -->
+            <div class="welcome-player">
+                <h2>Welcome! <span id="player-name"></span></h2>
+            </div>
+            <!-- Help -->
+            <div class="help-player">
+                <h3>New player?</h3>
+                <p>Create profile to track your progress</p>
+                <br>
+                <h3>Need info?</h3>
+                <p>Click help button</p>
+                <br>
+            </div>
             <div>Start button</div>
             <div>Create player button</div>
         </div>
     </section>
+
+    <!-- Links to external JavaScript and FontAwesome -->
     <script src="assets/js/script.js"></script>
     <script src="https://kit.fontawesome.com/4c85c0a16f.js" crossorigin="anonymous"></script>
 </body> 
