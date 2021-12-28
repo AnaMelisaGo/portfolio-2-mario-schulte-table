@@ -10,17 +10,20 @@
 </head>
 <body>
     
-    <header class="main-menu">
+    <header>
         <!-- Logo and heading -->
-        <a href="#" class="head-game">
-            <img src="assets/images/mario-image.png" alt="Mario image" class="logo">
-            <h1>Mario Schulte table</h1>
-        </a>
-        <!-- Navigation bar -->
-        <nav class="nav-game">
-            <a href="#">
-                <i class="fas fa-th-large"></i>
+        <div class="logo">
+            <a href="index.html">
+                <h1>
+                    <span class="first-word">Mario</span>
+                    <span class="second-word"> Schulte</span>
+                    <span class="third-word"> table</span>
+
+                </h1>
             </a>
+        </div>
+        <!-- Navigation bar -->
+        <nav class="nav-game" id="my-nav-game">
             <ul>
                 <li>
                     <a href="#" class="player-name">Player 1</a>
@@ -31,14 +34,33 @@
                 <li>
                     <a href="#">Contact Us</a>
                 </li>
-            </ul>
-        </nav>
+                </ul>
+            </nav>
+            <div id="game-icon" class="game-icon" onclick="toggleGameMenu(this)">
+                <i class="fas fa-bars"></i>
+                <ul class="game-menu">
+                    <li>
+                        <a href="#" id="player-name">Player 1</a>
+                    </li>
+                    <li>
+                        <a href="#" id="help">Help</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact Us</a>
+                    </li>
+                    </ul>
+            </div>
+        
     </header>
+
+    <!-- Home section -->
     <section class="main-bg">
-        <div>Title</div>
-        <div>Content</div>
-        <div>Start button</div>
-        <div>Create player button</div>
+        <div class="main-container">
+            <div>Title</div>
+            <div>Content</div>
+            <div>Start button</div>
+            <div>Create player button</div>
+        </div>
     </section>
     <script src="assets/js/script.js"></script>
     <script src="https://kit.fontawesome.com/4c85c0a16f.js" crossorigin="anonymous"></script>
