@@ -8,7 +8,7 @@
 :root {
     --green: #46ad32;
     --red: #df4646;
-    --blue: #334de4;
+    --blue: #67bcec;
     --yellow: #dcdf43;
     --black: #000000;
     --gray: #c9c9c9;
@@ -29,7 +29,7 @@ h1, h2, h3 {
 }
 
 /* ---------------------------------------------- NAVIGATION BAR ----------------------------- */
-/* Javascript academy */
+/* Javascript academy tutorial for responsive navigation bar except some modifications */
 header {
     padding: 0 20px;
     height: 60px;
@@ -80,6 +80,7 @@ header a {
     margin-left: 20px;
 }
 
+/* Own code */
 .nav-game ul li a {
     padding: 10px;
     color: var(--gray);
@@ -87,7 +88,6 @@ header a {
 
 .logo h1:hover {
     border: 1px solid var(--yellow);
-    background: var(--dark-gray);
     transform: scale(1.1);
     transition: 0.3s;
 }
@@ -100,14 +100,11 @@ header a {
 .nav-game ul li a:hover {
     background: var(--dark-gray);
     border: 1px solid var(--yellow);
-
-
 }
 
 .game-icon {
     display: none;
     position: relative;
-    
 }
 
 .game-icon i {
@@ -137,8 +134,7 @@ header a {
 }
 
 .game-menu li {
-    margin: 20px;
-    
+    margin: 20px;  
 }
 
 .game-menu li a {
@@ -153,7 +149,6 @@ header a {
 
 .game-menu li a:hover {
     border: 1px solid var(--yellow);
-    background: var(--dark-gray)
 }
 
 /* .game-menu li a:hover {
@@ -228,8 +223,11 @@ header a {
     display: none;
 } */
 
+
+
+
 /* ---------------------------------------------- BACKGROUND IMAGE --------------------------- */
-/* own code */
+/* Background are own code */
 .main-bg {
     height: 600px;
     max-height: 100%;
@@ -239,25 +237,85 @@ header a {
     background-position: bottom;
 }
 
-/* own code */
 .main-container {
     width: 500px;
     max-width: 900px;
     margin: 0 auto;
     padding-top: 20px;
-    background: rgba(255, 255, 0, 0.6);
+    /* background: rgba(255, 255, 0, 0.6); */
     text-align: center;
+    
 }
 
 .welcome-player {
     padding: 20px;
 }
 
+.welcome-player img {
+    height: 50px;
+}
+
 .help-player {
     background: var(--transparent-white);
+    border: 5px solid var(--black);
+    padding: 20px;
+    border-radius: 5px;
+    /* margin: 50px 0; */
+}
+
+/* ---------------------------------------------- BUTTONS --------------------------- */
+/* All buttons are own code */
+.btn-container {
+    margin: 20px 0;
+}
+
+.btn {
+    display: inline-flex;
+    height: 60px;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 250px;
+    border: 2px solid var(--dark-gray);
+    border-radius: 5px;
+    margin: 20px 0;
+    text-decoration: none;
+    color: initial;
+    font-family: 'Bungee', cursive;
+}
+
+.start-btn {
+    background: var(--yellow);
+}
+
+.start-text {
+    font-size: 20px;
+}
+
+.start-icon img {
+    height: 50px;
+}
+
+.player-btn {
+    background: var(--blue);
+}
+
+.btn:hover {
+    box-shadow: 9px 9px 10px var(--black);
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.start-btn:active {
+    background: #a2a505;
+}
+
+.player-btn:active {
+    background: #1596e0;
+
 }
 
 /* ---------------------------------------------- MEDIA QUERIES --------------------------- */
+/* All media queries are own code */
 @media screen and (max-width: 1220px){
     .nav-game {
         display: none;
@@ -265,7 +323,6 @@ header a {
     .game-icon {
         display: block;
     }
-
 }
 
 @media screen and (max-width: 1000px){
@@ -282,9 +339,9 @@ header a {
     .game-icon {
         display: block
     }
+    
     .main-bg {
         background-size: cover;
-        height: 500px;
     }
 
     .main-container {
