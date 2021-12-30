@@ -29,10 +29,10 @@
                     <a href="#" class="player-name">Player 1</a>
                 </li>
                 <li>
-                    <a href="#" class="help">Help</a>
+                    <a href="#" class="how">How to play</a>
                 </li>
                 <li>
-                    <a href="#" class="contact-us">Contact Us</a>
+                    <a href="#" class="about-game">About game</a>
                 </li>
             </ul>
         </nav>
@@ -44,13 +44,13 @@
                     <a href="#" class="player-name">Player 1</a>
                 </li>
                 <li>
-                    <a href="#" id="small-help">Help</a>
+                    <a href="#" class="how">How to play</a>
                 </li>
                 <li>
-                    <a href="#" id="small-contact-us">Contact Us</a>
+                    <a href="#" class="about-game">About game</a>
                 </li>
             </ul>
-        </div>    
+        </div>
     </header>
 
     <!-- Table section -->
@@ -63,18 +63,22 @@
             </div>
             <!-- Timer -->
             <div class="timer table-head">
-                <p id="dateToday">Date:</p>
-                <p id="game-timer"><span>00</span>:<span>00</span>:<span>00</span></p>
+                <p id="dateToday">Date: </p>
+                <p id="game-timer">
+                    <span id="minute">00</span>:
+                    <span id="seconds">00</span>:
+                    <span id="milliseconds">00</span>
+                </p>
             </div>
             
             <div id="game-table" class="game-table">
                 <table>
                     <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>5</td>
+                        <td class="cell">1</td>
+                        <td class="cell">2</td>
+                        <td class="cell">3</td>
+                        <td class="cell">4</td>
+                        <td class="cell">5</td>
                     </tr>
                     <tr>
                         <td>6</td>
@@ -105,6 +109,9 @@
                         <td>25</td>
                     </tr>
                 </table>
+            </div>
+            <div>
+                <button >Start</button>
             </div>
         </div>
     </section>

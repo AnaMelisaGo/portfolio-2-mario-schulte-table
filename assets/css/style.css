@@ -207,15 +207,15 @@ header a {
     font-family: 'Bungee', cursive;
 }
 
-.start-btn {
+.play-btn {
     background: var(--yellow);
 }
 
-.start-text {
+.play-text {
     font-size: 20px;
 }
 
-.start-icon img {
+.play-icon img {
     height: 50px;
 }
 
@@ -229,7 +229,7 @@ header a {
     transition: 0.3s;
 }
 
-.start-btn:active {
+.play-btn:active {
     background: #a2a505;
 }
 
@@ -272,17 +272,16 @@ header a {
     height: 300px;
     margin: 70px 0 30px;
 
-    background: rgba(255, 255, 255, 0.90);
-    border: 2px solid black;
+    background: var(--transparent-white);
+    border: 2px solid var(--transparent-white);
 }
 
-table, td {
-    /* border-collapse: collapse; */
-    
+table {
+    border: 1px solid black;
 }
+
 
 .game-table td{
-    
     background: var(--green);
     border-radius: 5px;
     width: 50px;
