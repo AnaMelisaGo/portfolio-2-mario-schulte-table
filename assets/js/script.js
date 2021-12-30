@@ -57,14 +57,36 @@ let timer = {
 playGame.tableCells = document.getElementsByClassName('cell');
 console.log(`This is the total number of cells: ${playGame.tableCells.length}`);
 
+//set the number for the table cells
+for(let i = 1; i < playGame.tableCells.length + 1; i++) {
+    console.log(i);
+    playGame.numData.push(i)
+}
 
+// shuffle function from geek for geeks tutorials
+/**
+ * Function to shuffle array of
+ * numbers
+ */
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        let k = array[i];
+        array[i] = array[j];
+        array[j] = k;
+    }
+    return array;
+}
 
-
-// shuffle function
-//
-
+playGame.newNumData = shuffleArray(playGame.numData);
+console.log(playGame.newNumData);
 
 //GET THE CELLS BY FOR LOOP TO START 
+for (let i = 0; i < playGame.tableCells.length; i++) {
+    console.log(playGame.tableCells[i].innerHTML);
+    playGame.tableCells[i].innerHTML = playGame.newNumData[i];
+}
+
 
 //LOOP THROGHT THE LENGTH OF TABLE DATA TO GET LENGTH
 //answernum
