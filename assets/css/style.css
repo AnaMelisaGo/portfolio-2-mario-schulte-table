@@ -154,7 +154,7 @@ header a {
 /* ---------------------------------------------- BACKGROUND IMAGE --------------------------- */
 /* Background are own code */
 .main-bg {
-    height: 600px;
+    height: 90vh;
     max-height: 100%;
     background-size: contain;
     background-image: url('../images/mario-bg.png');
@@ -179,7 +179,7 @@ header a {
     height: 50px;
 }
 
-.help-player {
+.text-container {
     background: var(--transparent-white);
     border: 5px solid var(--black);
     padding: 20px;
@@ -238,11 +238,11 @@ header a {
 
 }
 
-/* ---------------------------------------------- TABLE HEAD --------------------------- */
+/* ---------------------------------------------- TABLE HEADER --------------------------- */
 
 .table-container {
     width: 500px;
-    max-width: 900px;
+    max-width: 100%;
     margin: 0 auto;
     padding-top: 20px;
     /* background: rgba(255, 255, 0, 0.6); */
@@ -263,6 +263,10 @@ header a {
     justify-content: front-end;
     gap: 20px;
 }
+.timer {
+    display: flex;
+    justify-content: space-between;
+}
 
 /* ---------------------------------------------- TABLE GAME --------------------------- */
 .game-table {
@@ -270,7 +274,8 @@ header a {
     justify-content: center;
     
     height: 300px;
-    margin: 70px 0 30px;
+    margin: 10px 0;
+    padding: 15px 0;
 
     background: var(--transparent-white);
     border: 2px solid var(--transparent-white);
@@ -280,7 +285,6 @@ table {
     border: 1px solid black;
 }
 
-
 .game-table td{
     /* background: var(--green); */
     border-radius: 5px;
@@ -289,6 +293,23 @@ table {
     text-align: center;
     font-size: 20px;
     cursor: pointer;
+}
+
+/* ---------------------------------------------- START BUTTON --------------------------- */
+.table-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.t-btn {
+    margin: 0 40px;
+    padding: 5px;
+    font-size: 20px;
+    height: 50px;
+    width: 150px;
+    border: 2px solid var(--dark-gray);
+    border-radius: 8px;
 }
 
 /* ---------------------------------------------- MEDIA QUERIES --------------------------- */

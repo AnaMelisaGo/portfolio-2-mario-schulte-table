@@ -56,21 +56,23 @@
     <!-- Table section -->
     <section class="main-bg">
         <div class="table-container">
-            <!-- Player details -->
-            <div class="table-player table-head">
-                <h3 class="player-name"></h3>
-                <p>Congrats! lorem lorem lorem lore</p>
+            <div class="text-container">
+                <!-- Player details -->
+                <div class="table-player table-head">
+                    <h3 class="player-name"></h3>
+                    <p>Congrats! lorem lorem lorem lore</p>
+                </div>
+                <!-- Timer -->
+                <div class="timer table-head">
+                    <p id="dateToday">Date: </p>
+                    <p id="game-timer">
+                        <span id="minute">00</span>:
+                        <span id="seconds">00</span>:
+                        <span id="milliseconds">00</span>
+                    </p>
+                </div>
             </div>
-            <!-- Timer -->
-            <div class="timer table-head">
-                <p id="dateToday">Date: </p>
-                <p id="game-timer">
-                    <span id="minute">00</span>:
-                    <span id="seconds">00</span>:
-                    <span id="milliseconds">00</span>
-                </p>
-            </div>
-            
+           
             <div id="game-table" class="game-table">
                 <table>
                     <tr>
@@ -110,8 +112,9 @@
                     </tr>
                 </table>
             </div>
-            <div>
-                <button >Start</button>
+            <div class="table-btn">
+                <button class="t-btn">Start</button>
+                <button class="t-btn">Stop</button>
             </div>
         </div>
     </section>
