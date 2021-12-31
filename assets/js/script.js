@@ -25,8 +25,6 @@ let playerData = {
 let playerName = document.getElementsByClassName('player-name');
 for(player of playerName) {
     /* player-name is the class of each container to show tha name of the player */
-    //console.log(player.innerHTML);
-    //console.log(playerData.name);
     player.innerHTML = playerData.name;  
 }
 /* ------------------------------------------- */
@@ -36,9 +34,10 @@ let playGame = {
     dateToday: new Date(),
     tableCells: '',
     numData: [ ],
-    newNumData: [ ],
+    shuffleNumData: [ ],
     answerNum: [ ],
     selectedNum: [ ],
+    currentSelectedNum: '',
 }
 
 console.log(playGame.dateToday.toDateString()); // to show date of today
@@ -57,7 +56,7 @@ let timer = {
 playGame.tableCells = document.getElementsByClassName('cell');
 console.log(`This is the total number of cells: ${playGame.tableCells.length}`);
 
-//set the number for the table cells
+//set the number for the table cells by getting the length of the tablecells
 for(let i = 1; i < playGame.tableCells.length + 1; i++) {
     console.log(i);
     playGame.numData.push(i)
@@ -78,18 +77,59 @@ function shuffleArray(array) {
     return array;
 }
 
-playGame.newNumData = shuffleArray(playGame.numData);
-console.log(playGame.newNumData);
+//LOOP THROUGH THE TABLE CELLS TO GET EACH MOUSE CLICK
+/**
+ * Function to check if the clicked number
+ * is the right sequence of numbers in ascending order
+ */
+function checkNumber() {
+    //1- get each click
+    let len = playGame.tableCells.length - 1;
+    for (let i = playGame.tableCells.length - len; i > 0; i--) {
+        playGame.currentSelectedNum = this.innerHTML;
+        console.log(playGame.currentSelectedNum);
 
-//GET THE CELLS BY FOR LOOP TO START 
-for (let i = 0; i < playGame.tableCells.length; i++) {
-    console.log(playGame.tableCells[i].innerHTML);
-    playGame.tableCells[i].innerHTML = playGame.newNumData[i];
+        //2 - check if a number is clicked again
+        if (playGame.selectedNum.includes(parseInt(playGame.currentSelectedNum))) {
+            continue;
+        }
+
+        //3 - assign all clicked numbers to selectedNum
+        playGame.selectedNum.push(parseInt(playGame.currentSelectedNum));
+        console.log(playGame.selectedNum);
+        
+        //4 - Checking if its correct number or incorrect
+        if (playGame.answerNum[playGame.selectedNum.indexOf(parseInt(playGame.currentSelectedNum))] 
+        === parseInt(playGame.currentSelectedNum) && 
+        playGame.selectedNum.includes(parseInt(playGame.currentSelectedNum))) {
+            console.log(`It's correct`);
+            this.style.background = 'var(--green)'
+        } else {
+            playGame.answerNum.splice(0, 0, playGame.selectedNum.indexOf(parseInt(playGame.currentSelectedNum)));
+            playGame.answerNum = playGame.answerNum.filter(numb => numb !== parseInt(playGame.currentSelectedNum));
+            console.log(`It's incorrect`);
+            this.style.background = 'var(--red)';
+        }
+    }
 }
 
 
-//LOOP THROGHT THE LENGTH OF TABLE DATA TO GET LENGTH
-//answernum
+playGame.shuffleNumData = shuffleArray(playGame.numData);
+console.log(playGame.newNumData);
+//GET THE CELLS THROUGH FOR LOOP AND ASSIGN THE SHUFFLED NUMBER
+for (let i = 0; i < playGame.tableCells.length; i++) {
+    console.log(playGame.tableCells[i].innerHTML);
+    playGame.tableCells[i].innerHTML = playGame.shuffleNumData[i];
+    //ADD EVENTLISTENER TO EACH TABLECELLS
+    playGame.tableCells[i].addEventListener('click', checkNumber)
+}
 
-//checkNum
+//Set the answerNum for comparison to get the right sequence of numbers
+//by arranging them in ascending order using sort()
+//from W3 Schools Sort array
+playGame.answerNum = playGame.shuffleNumData.sort(function(a, b){return a - b})
+console.log(playGame.answerNum);
+
+
+
 // settimer
