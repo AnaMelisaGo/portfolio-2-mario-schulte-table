@@ -60,14 +60,14 @@
                 <!-- Player details -->
                 <div class="table-player table-head">
                     <h3 class="player-name"></h3>
-                    <p>Congrats! lorem lorem lorem lore</p>
+                    <p id="finish-msg">Congrats! lorem lorem lorem lore</p>
                 </div>
                 <!-- Timer -->
                 <div class="timer table-head">
                     <p id="dateToday">Date: </p>
                     <p id="game-timer">
-                        <span id="minute">00</span>:
-                        <span id="seconds">00</span>:
+                        <span id="minute">00</span> : 
+                        <span id="seconds">00</span> : 
                         <span id="milliseconds">00</span>
                     </p>
                 </div>
@@ -76,11 +76,11 @@
             <div id="game-table" class="game-table">
                 <table>
                     <tr>
-                        <td class="cell">1</td>
-                        <td class="cell">2</td>
-                        <td class="cell">3</td>
-                        <td class="cell">4</td>
-                        <td class="cell">5</td>
+                        <td class="cell"> </td>
+                        <td class="cell"> </td>
+                        <td class="cell"> </td>
+                        <td class="cell"> </td>
+                        <td class="cell"> </td>
                     </tr>
                     <tr>
                         <td>6</td>
@@ -112,10 +112,10 @@
                     </tr>
                 </table>
             </div>
-            <div class="table-btn">
-                <button class="t-btn">Start</button>
-                <button class="t-btn">Stop</button>
-            </div>
+            <form name="form-btn" class="table-btn">
+                <button type="button" name="start" id="start" class="t-btn">Start</button>
+                <button type="button" name="stop" id="stop" class="t-btn">Stop</button>
+            </form>
         </div>
     </section>
 

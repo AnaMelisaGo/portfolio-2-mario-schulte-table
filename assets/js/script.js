@@ -43,14 +43,6 @@ let playGame = {
 console.log(playGame.dateToday.toDateString()); // to show date of today
 document.getElementById('dateToday').textContent += playGame.dateToday.toDateString();
 
-let timer = {
-    minute: document.getElementById('minute').textContent,
-    seconds: document.getElementById('seconds').textContent,
-    milliseconds: document.getElementById('milliseconds').textContent,
-}
-
-//console.log(`${timer.minute}:${timer.seconds}:${timer.milliseconds}`);
-
 /* ------------------------------------------- GAME ------------------------------- */
 /* Get the tablecells */
 playGame.tableCells = document.getElementsByClassName('cell');
@@ -58,7 +50,6 @@ console.log(`This is the total number of cells: ${playGame.tableCells.length}`);
 
 //set the number for the table cells by getting the length of the tablecells
 for(let i = 1; i < playGame.tableCells.length + 1; i++) {
-    console.log(i);
     playGame.numData.push(i)
 }
 
@@ -110,26 +101,79 @@ function checkNumber() {
             console.log(`It's incorrect`);
             this.style.background = 'var(--red)';
         }
+
+        if (playGame.selectedNum.indexOf(parseInt(playGame.currentSelectedNum)) + 1 === playGame.tableCells.length) {
+            endGame();
+        }
     }
 }
 
-
-playGame.shuffleNumData = shuffleArray(playGame.numData);
-console.log(playGame.newNumData);
-//GET THE CELLS THROUGH FOR LOOP AND ASSIGN THE SHUFFLED NUMBER
-for (let i = 0; i < playGame.tableCells.length; i++) {
-    console.log(playGame.tableCells[i].innerHTML);
-    playGame.tableCells[i].innerHTML = playGame.shuffleNumData[i];
-    //ADD EVENTLISTENER TO EACH TABLECELLS
-    playGame.tableCells[i].addEventListener('click', checkNumber)
+/* --------------------------------------------------------game start------- */
+function gameStart() {
+    playGame.shuffleNumData = shuffleArray(playGame.numData);
+    //GET THE CELLS THROUGH FOR LOOP AND ASSIGN THE SHUFFLED NUMBER
+    for (let i = 0; i < playGame.tableCells.length; i++) {
+        playGame.tableCells[i].innerHTML = playGame.shuffleNumData[i];
+        //ADD EVENTLISTENER TO EACH TABLECELLS
+        playGame.tableCells[i].addEventListener('click', checkNumber)
+    }
+    
+    //Set the answerNum for comparison to get the right sequence of numbers
+    //by arranging them in ascending order using sort()
+    //from W3 Schools Sort array
+    playGame.answerNum = playGame.shuffleNumData.sort(function(a, b){return a - b})
+    console.log(playGame.answerNum);
 }
 
-//Set the answerNum for comparison to get the right sequence of numbers
-//by arranging them in ascending order using sort()
-//from W3 Schools Sort array
-playGame.answerNum = playGame.shuffleNumData.sort(function(a, b){return a - b})
-console.log(playGame.answerNum);
+// set timer
+//dev.to Walter Nascimento
+let minute = 0;
+let second = 0;
+let millisecond = 0;
 
+let cron;
 
+document.getElementById('start').addEventListener('click', start);
+document.getElementById('stop').addEventListener('click', stop);
 
-// settimer
+function start() {
+    cron = setInterval(() => { tableTimer(); }, 10);
+    gameStart();
+}
+
+function stop() {
+    clearInterval(cron);
+    minute = 0;
+    second = 0;
+    millisecond = 0;
+    document.getElementById('minute').innerText = '00';
+    document.getElementById('seconds').innerText = '00';
+    document.getElementById('milliseconds').innerText = '00';
+}
+
+function endGame() {
+    clearInterval(cron);
+    let min = document.getElementById('minute').innerText;
+    let sec = document.getElementById('seconds').innerText;
+
+    document.getElementById('finish-msg').innerHTML = `You finished for ${min} and ${sec}!`
+    alert('finished')
+}
+
+function tableTimer() {
+    if ((millisecond += 10) === 1000) {
+        millisecond = 0;
+        second++;
+    }
+    if (second === 60) {
+        second = 0;
+        minute++;
+    }
+    document.getElementById('minute').innerText = returnData(minute);
+    document.getElementById('seconds').innerText = returnData(second);
+    document.getElementById('milliseconds').innerText = returnData(millisecond);
+}
+
+function returnData(time) {
+    return time > 10 ? time : `0${time}`;
+}

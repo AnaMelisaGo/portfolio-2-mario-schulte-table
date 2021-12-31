@@ -182,9 +182,12 @@ header a {
 .text-container {
     background: var(--transparent-white);
     border: 5px solid var(--black);
-    padding: 20px;
     border-radius: 5px;
     /* margin: 50px 0; */
+}
+
+.help-play {
+    padding: 20px;
 }
 
 /* ---------------------------------------------- BUTTONS --------------------------- */
@@ -260,7 +263,7 @@ header a {
 .table-player {
     display: flex;
     align-items: center;
-    justify-content: front-end;
+    justify-content: space-between;
     gap: 20px;
 }
 .timer {
