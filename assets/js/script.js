@@ -44,13 +44,15 @@ console.log(playGame.dateToday.toDateString()); // to show date of today
 document.getElementById('dateToday').textContent += playGame.dateToday.toDateString();
 
 /* ------------------------------------------- GAME ------------------------------- */
-/* Get the tablecells */
-playGame.tableCells = document.getElementsByClassName('cell');
-console.log(`This is the total number of cells: ${playGame.tableCells.length}`);
-
-//set the number for the table cells by getting the length of the tablecells
-for(let i = 1; i < playGame.tableCells.length + 1; i++) {
-    playGame.numData.push(i)
+function pushCellData() {
+    /* Get the tablecells */
+    playGame.tableCells = document.getElementsByClassName('cell');
+    console.log(`This is the total number of cells: ${playGame.tableCells.length}`);
+    
+    //set the number for the table cells by getting the length of the tablecells
+    for(let i = 1; i < playGame.tableCells.length + 1; i++) {
+        playGame.numData.push(i)
+    }
 }
 
 // shuffle function from geek for geeks tutorials
@@ -110,6 +112,7 @@ function checkNumber() {
 
 /* --------------------------------------------------------game start------- */
 function gameStart() {
+    pushCellData();
     playGame.shuffleNumData = shuffleArray(playGame.numData);
     //GET THE CELLS THROUGH FOR LOOP AND ASSIGN THE SHUFFLED NUMBER
     for (let i = 0; i < playGame.tableCells.length; i++) {
@@ -139,6 +142,7 @@ document.getElementById('stop').addEventListener('click', stop);
 function start() {
     cron = setInterval(() => { tableTimer(); }, 10);
     gameStart();
+    document.getElementById('finish-msg').innerHTML = ``;
 }
 
 function stop() {
@@ -146,9 +150,28 @@ function stop() {
     minute = 0;
     second = 0;
     millisecond = 0;
+
+
+    for (let i = 0; i < playGame.tableCells.length; i++) {
+        playGame.tableCells[i].innerHTML = '';
+        playGame.tableCells[i].style.background = 'var(--transparent-white)';
+        console.log(playGame.tableCells[i]);
+
+        playGame.numData = [ ];
+        playGame.shuffleNumData = [ ];
+        playGame.answerNum = [ ];
+        playGame.selectedNum = [ ];
+        playGame.currentSelectedNum = '';
+        console.log(playGame.tableCells, playGame.numData, playGame.shuffleNumData );
+    }
+
+    let min = document.getElementById('minute').innerText;
+    let sec = document.getElementById('seconds').innerText;
+    document.getElementById('finish-msg').innerHTML = `Oops! You stopped at ${min} and ${sec}!`;
     document.getElementById('minute').innerText = '00';
     document.getElementById('seconds').innerText = '00';
     document.getElementById('milliseconds').innerText = '00';
+    alert(`Oops! you stopped`);
 }
 
 function endGame() {
@@ -156,8 +179,8 @@ function endGame() {
     let min = document.getElementById('minute').innerText;
     let sec = document.getElementById('seconds').innerText;
 
-    document.getElementById('finish-msg').innerHTML = `You finished for ${min} and ${sec}!`
-    alert('finished')
+    document.getElementById('finish-msg').innerHTML = `You finished for ${min} min and ${sec} sec!`
+    alert('finished');
 }
 
 function tableTimer() {
