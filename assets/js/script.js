@@ -106,6 +106,7 @@ function checkNumber() {
 
         if (playGame.selectedNum.indexOf(parseInt(playGame.currentSelectedNum)) + 1 === playGame.tableCells.length) {
             endGame();
+            clearData();
         }
     }
 }
@@ -116,6 +117,7 @@ function gameStart() {
     playGame.shuffleNumData = shuffleArray(playGame.numData);
     //GET THE CELLS THROUGH FOR LOOP AND ASSIGN THE SHUFFLED NUMBER
     for (let i = 0; i < playGame.tableCells.length; i++) {
+        playGame.tableCells[i].style.background = 'var(--transparent-white)';
         playGame.tableCells[i].innerHTML = playGame.shuffleNumData[i];
         //ADD EVENTLISTENER TO EACH TABLECELLS
         playGame.tableCells[i].addEventListener('click', checkNumber)
@@ -126,6 +128,21 @@ function gameStart() {
     //from W3 Schools Sort array
     playGame.answerNum = playGame.shuffleNumData.sort(function(a, b){return a - b})
     console.log(playGame.answerNum);
+}
+
+function clearData() {
+    for (let i = 0; i < playGame.tableCells.length; i++) {
+        playGame.tableCells[i].innerHTML = '';
+        playGame.tableCells[i].style.background = 'var(--transparent-white)';
+        console.log(playGame.tableCells[i]);
+
+        playGame.numData = [ ];
+        playGame.shuffleNumData = [ ];
+        playGame.answerNum = [ ];
+        playGame.selectedNum = [ ];
+        playGame.currentSelectedNum = '';
+        console.log(playGame.tableCells, playGame.numData, playGame.shuffleNumData );
+    }
 }
 
 // set timer
@@ -151,19 +168,7 @@ function stop() {
     second = 0;
     millisecond = 0;
 
-
-    for (let i = 0; i < playGame.tableCells.length; i++) {
-        playGame.tableCells[i].innerHTML = '';
-        playGame.tableCells[i].style.background = 'var(--transparent-white)';
-        console.log(playGame.tableCells[i]);
-
-        playGame.numData = [ ];
-        playGame.shuffleNumData = [ ];
-        playGame.answerNum = [ ];
-        playGame.selectedNum = [ ];
-        playGame.currentSelectedNum = '';
-        console.log(playGame.tableCells, playGame.numData, playGame.shuffleNumData );
-    }
+    clearData();
 
     let min = document.getElementById('minute').innerText;
     let sec = document.getElementById('seconds').innerText;
