@@ -1,4 +1,3 @@
-/* ---------------------------------------------- Navigation bar --------------------------- */
 /**
  * A function to toggle between class
  * for responsive navigation bar
@@ -11,23 +10,19 @@ function toggleGameMenu(menu) {
 let menuButton = document.getElementById('icon-game');
 menuButton.addEventListener('click', toggleGameMenu)
 
-/* ---------------------------------------------- The Schulte Table --------------------------- */
 /* Player Data */
-
 let playerData = {
     name: 'Sophia',
     age: '',
     
 }
 
-/* -------------------------------------------- Name of player ------------- */
 /* to show name of player in all pages and nav bar */
 let playerName = document.getElementsByClassName('player-name');
 for(player of playerName) {
     /* player-name is the class of each container to show tha name of the player */
     player.innerHTML = playerData.name;  
 }
-/* ------------------------------------------- */
 
 /* Play game Data */
 let playGame = {
@@ -43,7 +38,10 @@ let playGame = {
 console.log(playGame.dateToday.toDateString()); // to show date of today
 document.getElementById('dateToday').textContent += playGame.dateToday.toDateString();
 
-/* ------------------------------------------- GAME ------------------------------- */
+/**
+ * A function to assign numbers to each table cell according
+ * to the total number of cells in the table
+ */
 function pushCellData() {
     /* Get the tablecells */
     playGame.tableCells = document.getElementsByClassName('cell');
@@ -70,7 +68,7 @@ function shuffleArray(array) {
     return array;
 }
 
-//LOOP THROUGH THE TABLE CELLS TO GET EACH MOUSE CLICK
+//Anton Kalnin
 /**
  * Function to check if the clicked number
  * is the right sequence of numbers in ascending order
@@ -111,7 +109,9 @@ function checkNumber() {
     }
 }
 
-/* --------------------------------------------------------game start------- */
+/**
+ * To start the game
+ */
 function gameStart() {
     pushCellData();
     playGame.shuffleNumData = shuffleArray(playGame.numData);
@@ -128,22 +128,25 @@ function gameStart() {
     //from W3 Schools Sort array
     playGame.answerNum = playGame.shuffleNumData.sort(function(a, b){return a - b})
     console.log(playGame.answerNum);
+    document.getElementById('stop').disabled = false;
 }
 
+/**
+ * Function to reset data from the start
+ */
 function clearData() {
     for (let i = 0; i < playGame.tableCells.length; i++) {
         playGame.tableCells[i].innerHTML = '';
         playGame.tableCells[i].style.background = 'var(--transparent-white)';
-        console.log(playGame.tableCells[i]);
 
         playGame.numData = [ ];
         playGame.shuffleNumData = [ ];
         playGame.answerNum = [ ];
         playGame.selectedNum = [ ];
         playGame.currentSelectedNum = '';
-        console.log(playGame.tableCells, playGame.numData, playGame.shuffleNumData );
     }
 }
+
 
 // set timer
 //dev.to Walter Nascimento
@@ -156,12 +159,18 @@ let cron;
 document.getElementById('start').addEventListener('click', start);
 document.getElementById('stop').addEventListener('click', stop);
 
+/**
+ * Callback function for the start button
+ */
 function start() {
     cron = setInterval(() => { tableTimer(); }, 10);
     gameStart();
     document.getElementById('finish-msg').innerHTML = ``;
 }
 
+/**
+ * Callback function for the stop button
+ */
 function stop() {
     clearInterval(cron);
     minute = 0;
@@ -177,8 +186,13 @@ function stop() {
     document.getElementById('seconds').innerText = '00';
     document.getElementById('milliseconds').innerText = '00';
     alert(`Oops! you stopped`);
+
+    document.getElementById('stop').disabled = true;
 }
 
+/**
+ * Function to be executed when the game ends
+ */
 function endGame() {
     clearInterval(cron);
     let min = document.getElementById('minute').innerText;
@@ -186,8 +200,13 @@ function endGame() {
 
     document.getElementById('finish-msg').innerHTML = `You finished for ${min} min and ${sec} sec!`
     alert('finished');
+
+    document.getElementById('stop').disabled = true;
 }
 
+/**
+ * Timer function
+ */
 function tableTimer() {
     if ((millisecond += 10) === 1000) {
         millisecond = 0;
@@ -202,6 +221,10 @@ function tableTimer() {
     document.getElementById('milliseconds').innerText = returnData(millisecond);
 }
 
+/**
+ * Function to add zero to timer when
+ * the number is below 10
+ */
 function returnData(time) {
     return time > 10 ? time : `0${time}`;
 }
