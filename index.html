@@ -13,7 +13,7 @@
     <header>
         <!-- Logo and heading -->
         <div class="logo">
-            <a href="index.html">
+            <a href="index.html" id="home-button">
                 <h1>
                     <span class="first-word">Mario</span>
                     <span class="second-word"> Schulte</span>
@@ -55,7 +55,7 @@
 
     <!-- Home section -->
     <section class="main-bg">
-        <div class="main-container">
+        <div class="main-container" id="home-section">
 
             <!-- Greeting player -->
             <div class="welcome-player">
@@ -75,24 +75,101 @@
             <!-- Play button -->
             <div class="btn-container">
                 <div>
-                    <a href="table.html" class="btn play-btn">
+                    <button type="button" class="btn play-btn" id="btn-play">
                         <span class="play-text">Start</span>
                         <span class="play-icon">
                             <img src="assets/images/super-mashroom.png" alt="Super mushroom image">
                         </span>
-                    </a>
+                    </button>
                 </div>
     
                 <!-- Create player profile -->
                 <div>
-                    <a href="#" type="button" class="btn player-btn">
+                    <button type="button" class="btn player-btn" id="player-btn">
                         <span>Create player</span>
                         <span>
                             <img src="assets/images/question-block.png" alt="The prize box">
                         </span>
-                    </a>
+                    </button>
                 </div>
             </div>
+
+            <!-- Form -->
+            <div class="player-form" id="player-form">
+                <div class="close-container">
+                    <button id="close-button" class="close-button">&times;</button>
+                </div>
+                <form action="https://formdump.codeinstitute.net/" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="name here">
+                    <label for="birth-year">Birth year:</label>
+                    <input type="number" id="birth-year">
+                </form>
+            </div>
+            <div id="overlay"></div>
+        </div>
+    <!--  table section -->
+        <div class="table-container" id="table-section">
+            <div class="text-container">
+                <!-- Player details -->
+                <div class="table-player table-head">
+                    <h3 class="player-name"></h3>
+                    <p id="finish-msg"></p>
+                </div>
+                <!-- Timer -->
+                <div class="timer table-head">
+                    <p id="dateToday">Date: </p>
+                    <p id="game-timer">
+                        <span id="minute">00</span> : 
+                        <span id="seconds">00</span> : 
+                        <span id="milliseconds">00</span>
+                    </p>
+                </div>
+            </div>
+           
+            <div id="game-table" class="game-table">
+                <table>
+                    <tr>
+                        <td class="cell"> </td>
+                        <td class="cell"> </td>
+                        <td class="cell"> </td>
+                        <td class="cell"> </td>
+                        <td class="cell"> </td>
+                    </tr>
+                    <tr>
+                        <td class="cell"> </td>
+                        <td class="cell"> </td>
+                        <td class="cell"> </td>
+                        <td class="cell"> </td>
+                        <td class="cell"> </td>
+                    </tr>
+                    <tr>
+                        <td class="cell"> </td>
+                        <td class="cell"> </td>
+                        <td class="cell" id="center-cell"> </td>
+                        <td class="cell"> </td>
+                        <td class="cell"> </td>
+                    </tr>
+                    <tr>
+                        <td class="cell"> </td>
+                        <td class="cell"> </td>
+                        <td class="cell"> </td>
+                        <td class="cell"> </td>
+                        <td class="cell"> </td>
+                    </tr>
+                    <tr>
+                        <td class="cell"> </td>
+                        <td class="cell"> </td>
+                        <td class="cell"> </td>
+                        <td class="cell"> </td>
+                        <td class="cell"> </td>
+                    </tr>
+                </table>
+            </div>
+            <form name="form-btn" class="table-btn" id="btn-table">
+                <button type="button" name="start" id="start" class="t-btn">Start</button>
+                <button type="button" name="stop" id="stop" class="t-btn" disabled>Stop</button>
+            </form>
         </div>
     </section>
 

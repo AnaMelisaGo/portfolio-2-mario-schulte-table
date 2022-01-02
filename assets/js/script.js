@@ -10,6 +10,50 @@ function toggleGameMenu(menu) {
 let menuButton = document.getElementById('icon-game');
 menuButton.addEventListener('click', toggleGameMenu)
 
+//----
+let playButton = document.getElementById('btn-play');
+let homeButton = document.getElementById('home-button');
+let homeSection = document.getElementById('home-section');
+let tableSection = document.getElementById('table-section');
+
+playButton.addEventListener('click', displayGame);
+homeButton.addEventListener('click', displayHome);
+
+function displayGame() {
+    tableSection.classList.add('active');
+    homeSection.classList.add('not-active');
+}
+
+function displayHome() {
+    tableSection.classList.remove('active');
+    homeSection.classList.remove('not-active');
+}
+
+
+// ----
+let openForm = document.getElementById('player-btn');
+let playerForm = document.getElementById('player-form')
+let overlay = document.getElementById('overlay');
+
+let closeForm = document.getElementById('close-button');
+
+
+openForm.addEventListener('click', openPlayerForm);
+closeForm.addEventListener('click', closePlayerForm);
+
+function openPlayerForm() {
+    playerForm.classList.add('active');
+    overlay.classList.add('active');
+}
+
+function closePlayerForm() {
+    playerForm.classList.remove('active');
+    overlay.classList.remove('active');
+}
+
+//----
+
+
 /* Player Data */
 let playerData = {
     name: 'Sophia',
@@ -22,6 +66,7 @@ let playerName = document.getElementsByClassName('player-name');
 for(player of playerName) {
     /* player-name is the class of each container to show tha name of the player */
     player.innerHTML = playerData.name;  
+    
 }
 
 /* Play game Data */
@@ -36,7 +81,11 @@ let playGame = {
 }
 
 console.log(playGame.dateToday.toDateString()); // to show date of today
-document.getElementById('dateToday').textContent += playGame.dateToday.toDateString();
+function displayDate() {
+    document.getElementById('dateToday').textContent += playGame.dateToday.toDateString();
+}
+displayDate();
+
 
 /**
  * A function to assign numbers to each table cell according
@@ -228,3 +277,41 @@ function tableTimer() {
 function returnData(time) {
     return time > 10 ? time : `0${time}`;
 }
+
+// ===================== open modal
+/* const openPlayerForm = document.querySelectorAll('data-modal-target');
+const closePlayerForm = document.querySelectorAll('data-close-button');
+const overlay = document.getElementById('overlay');
+
+openPlayerForm.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = document.querySelector(a.dataset.modalTarget);
+        openForm(modal)
+    })
+})
+
+closePlayerForm.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = button.closest('.player-form');
+        closeForm(modal)
+    })
+})
+
+function openForm(modal) {
+    if (modal == null) {
+        return;
+    }
+    modal.classList.add('active');
+    overlay.classList.add('active');
+}
+
+function closeForm(modal) {
+    if (modal == null) {
+        return;
+    }
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+} */
+
+//-----
+
