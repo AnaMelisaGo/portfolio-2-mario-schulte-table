@@ -24,20 +24,23 @@
  
 ***
  
-## Welcome to <<project-name>>!
+## Welcome to Mario Schulte Table!
  
 ![show final site image here](assets/docs/image.png)
  
 ***
  
 ## What does it do and what does it need to fulfill?
-lorem
+
+Mario Schulte Table is a game website to train the brain. It is mainly used to upgrade the user's reading skills to a higher level. Exercises with schulte tables will improve peripheral visual perception that can be useful on a daily basis, most importantly in aiming speed reading.
+
  
 ![show favicon site image here](assets/docs/image.png)
  
 ### Functionality of Project
-This application contains ....
- 
+
+The goal of the game is not to get a high score nor to finish it in the least amount of time. It's aimed to widen the peripheral vision concentrating the eye in one single spot in the table. Just in the center of the table without moving the eye away from that spot.
+
 [Back to top](#table-of-contents)
  
 ## User Experience:
@@ -45,24 +48,34 @@ This application contains ....
 #### User Stories:
 _Generic (Guest/Public) User:_
 * As a Generic User, I want to...
+   * use applications for every age and gender.
+   * to train the brain by playing
+
  
 _Registers (Logged in) User:_
 * As a Registered User, I want to...
+   * to improve reading skills and concentration everyday
+   * to continuously train the eye peripheral vision
+   * be able to log daily achievements to see one's improvement
+   * to increase level to gain a better outcome
  
 _Developer:_
 * As a Developer, I want to...
+   * learn to code using different languages
+   * be able to build a very useful and attractive app for all users
  
 #### Design
  
 ##### 1. Font
-lorem
+The font used in the website is from Google fonts:
+   * __Bungee__ for the heading
+   * __Orbitron__ for the rest of the text to give it some vintage gaming vibes 
+
  
 ##### 2. Color Scheme
-lorem - replace as necessary
+Basic colors are chosen for the website following the color scheme from the Super Mario games: red, blue, red, yellow, white and black.
  
-detail color palettes/swatches here using images.
- 
-The colors used throughout and what for etc....
+![Color](assets/images/mario-color-scheme.png)
  
 ##### 3. Logo
 The logo was ... add detail, or remove as necessary
