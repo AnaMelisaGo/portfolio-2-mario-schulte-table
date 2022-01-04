@@ -315,6 +315,22 @@ table {
     width: 150px;
     border: 2px solid var(--dark-gray);
     border-radius: 8px;
+    font-family: 'Orbitron', sans-serif;
+
+}
+
+#start {
+    background: var(--green);
+}
+
+.t-btn:hover {
+    box-shadow: 9px 9px 10px var(--transparent-black);
+    cursor: pointer;
+}
+
+#start:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
 }
 
 /* ---------------------------------------------- Player form --------------------------- */
@@ -326,11 +342,12 @@ table {
     transition: 200ms ease-in-out;
     border: 5px solid var(--black);
     border-radius: 10px;
+    box-shadow: 9px 9px 10px var(--black);
     z-index: 10;
-    background-color: var(--transparent-white);
+    background-color: var(--green);
     width: 250px;
     max-width: 80%;
-    height: 180px;
+    height: 230px;
     display: none;
 }
 
@@ -344,7 +361,7 @@ table {
     cursor: pointer;
     border: none;
     outline: none;
-    font-size: 1.25rem;
+    font-size: 1.50rem;
     background: none;
 }
 
@@ -358,6 +375,7 @@ table {
 
 .player-form label {
     font-size: 18px;
+    font-family: 'Bungee', cursive;
 }
 
 .player-form input {
@@ -365,6 +383,23 @@ table {
     font-family: 'Orbitron', sans-serif;
     padding: 5px;
     margin-bottom: 10px;
+}
+
+.ok-btn {
+    width: 40%;
+    text-align: center;
+    display: block;
+    margin: 15px auto;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 50px;
+}
+
+.ok-btn:hover {
+    background: var(--yellow);
+    box-shadow: 9px 9px 10px var(--transparent-black);
+    
 }
 
 #overlay {

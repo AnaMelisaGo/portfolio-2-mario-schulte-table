@@ -1,3 +1,4 @@
+// From other source
 /**
  * A function to toggle between class
  * for responsive navigation bar
@@ -8,9 +9,10 @@ function toggleGameMenu(menu) {
 };
 
 let menuButton = document.getElementById('icon-game');
-menuButton.addEventListener('click', toggleGameMenu)
+menuButton.addEventListener('click', toggleGameMenu);
 
-//----
+//---- To display home and table section
+// Based on external source. Changed some code on my own
 let playButton = document.getElementById('btn-play');
 let homeButton = document.getElementById('home-button');
 let homeSection = document.getElementById('home-section');
@@ -29,14 +31,13 @@ function displayHome() {
     homeSection.classList.remove('not-active');
 }
 
-
-// ----
+// ---- Form pop up
+// Based on external source. Changed some code
 let openForm = document.getElementById('player-btn');
 let playerForm = document.getElementById('player-form')
 let overlay = document.getElementById('overlay');
 
 let closeForm = document.getElementById('close-button');
-
 
 openForm.addEventListener('click', openPlayerForm);
 closeForm.addEventListener('click', closePlayerForm);
@@ -51,16 +52,32 @@ function closePlayerForm() {
     overlay.classList.remove('active');
 }
 
-//----
+//---- Form
+let formTable = document.getElementById('table-form');
+formTable.addEventListener('submit', handleSubmit);
+
+function handleSubmit(event) {
+    event.preventDefault();
+    
+    
+    
+    console.log(playerData.name);
+    formTable.submit();
+}
 
 
 /* Player Data */
 let playerData = {
     name: 'Sophia',
+    birthYear: '',
+    currentYear: '',
     age: '',
-    
 }
 
+let localPlayerData = JSON.stringify(playerData);
+console.log(localPlayerData);
+localStorage.setItem('playerData', localPlayerData);
+// Own code
 /* to show name of player in all pages and nav bar */
 let playerName = document.getElementsByClassName('player-name');
 for(player of playerName) {
@@ -80,6 +97,7 @@ let playGame = {
     currentSelectedNum: '',
 }
 
+// Own code
 console.log(playGame.dateToday.toDateString()); // to show date of today
 function displayDate() {
     document.getElementById('dateToday').textContent += playGame.dateToday.toDateString();
@@ -117,7 +135,7 @@ function shuffleArray(array) {
     return array;
 }
 
-//Anton Kalnin
+// Based on Anton Kalinin Codepen
 /**
  * Function to check if the clicked number
  * is the right sequence of numbers in ascending order
@@ -154,10 +172,12 @@ function checkNumber() {
         if (playGame.selectedNum.indexOf(parseInt(playGame.currentSelectedNum)) + 1 === playGame.tableCells.length) {
             endGame();
             clearData();
+            document.getElementById('start').textContent = `Start again?`;
         }
     }
 }
 
+// Based on Anton Kalinin Codepen
 /**
  * To start the game
  */
@@ -176,10 +196,15 @@ function gameStart() {
     //by arranging them in ascending order using sort()
     //from W3 Schools Sort array
     playGame.answerNum = playGame.shuffleNumData.sort(function(a, b){return a - b})
-    console.log(playGame.answerNum);
     document.getElementById('stop').disabled = false;
+    document.getElementById('stop').style.background = 'var(--red)';
+    document.getElementById('start').disabled = true;
+    document.getElementById('start').style.background = 'none';
+
+    document.getElementById('center-cell').style.border = '2px solid var(--blue)';
 }
 
+//own code
 /**
  * Function to reset data from the start
  */
@@ -194,10 +219,14 @@ function clearData() {
         playGame.selectedNum = [ ];
         playGame.currentSelectedNum = '';
     }
+    document.getElementById('stop').style.background = 'initial';
+    document.getElementById('start').style.background = 'var(--green)';
+    document.getElementById('center-cell').style.border = 'none';
+
 }
 
 
-// set timer
+// ---- set timer
 //dev.to Walter Nascimento
 let minute = 0;
 let second = 0;
@@ -208,6 +237,7 @@ let cron;
 document.getElementById('start').addEventListener('click', start);
 document.getElementById('stop').addEventListener('click', stop);
 
+//dev.to Walter Nascimento
 /**
  * Callback function for the start button
  */
@@ -217,6 +247,7 @@ function start() {
     document.getElementById('finish-msg').innerHTML = ``;
 }
 
+//dev.to Walter Nascimento
 /**
  * Callback function for the stop button
  */
@@ -230,15 +261,18 @@ function stop() {
 
     let min = document.getElementById('minute').innerText;
     let sec = document.getElementById('seconds').innerText;
-    document.getElementById('finish-msg').innerHTML = `Oops! You stopped at ${min} and ${sec}!`;
+    document.getElementById('finish-msg').innerHTML = `Game stopped at ${min} min and ${sec} sec!`;
     document.getElementById('minute').innerText = '00';
     document.getElementById('seconds').innerText = '00';
     document.getElementById('milliseconds').innerText = '00';
     alert(`Oops! you stopped`);
 
     document.getElementById('stop').disabled = true;
+    document.getElementById('start').disabled = false;
+
 }
 
+//Own code
 /**
  * Function to be executed when the game ends
  */
@@ -251,8 +285,11 @@ function endGame() {
     alert('finished');
 
     document.getElementById('stop').disabled = true;
+    document.getElementById('start').disabled = false;
+
 }
 
+//dev.to Walter Nascimento
 /**
  * Timer function
  */
@@ -270,6 +307,7 @@ function tableTimer() {
     document.getElementById('milliseconds').innerText = returnData(millisecond);
 }
 
+//dev.to Walter Nascimento
 /**
  * Function to add zero to timer when
  * the number is below 10
