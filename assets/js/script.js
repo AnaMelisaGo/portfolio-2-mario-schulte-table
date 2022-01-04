@@ -1,4 +1,4 @@
-// From other source
+// From JavaScript Academy Tutorial Responsive navbar
 /**
  * A function to toggle between class
  * for responsive navigation bar
@@ -12,7 +12,9 @@ let menuButton = document.getElementById('icon-game');
 menuButton.addEventListener('click', toggleGameMenu);
 
 //---- To display home and table section
-// Based on external source. Changed some code on my own
+// Based on Web Dev Simplified Tutorial
+// How to build a pop up with JavaScript
+// Changed some code on my own
 let playButton = document.getElementById('btn-play');
 let homeButton = document.getElementById('home-button');
 let homeSection = document.getElementById('home-section');
@@ -32,7 +34,9 @@ function displayHome() {
 }
 
 // ---- Form pop up
-// Based on external source. Changed some code
+// Based on Web Dev Simplified Tutorial
+// How to build a pop up with JavaScript
+// Changed some code on my own
 let openForm = document.getElementById('player-btn');
 let playerForm = document.getElementById('player-form')
 let overlay = document.getElementById('overlay');
@@ -53,38 +57,59 @@ function closePlayerForm() {
 }
 
 //---- Form
+// Based on dcode Tutorial how to use Local Storage
+// Changed some code on my own
 let formTable = document.getElementById('table-form');
+let namePlayer = document.getElementById('name');
+let birthYear = document.getElementById('birth-year');
+let playerName = document.getElementsByClassName('player-name');
+
 formTable.addEventListener('submit', handleSubmit);
 
 function handleSubmit(event) {
     event.preventDefault();
     
-    
-    
-    console.log(playerData.name);
+    let name = namePlayer.value;
+    let year = birthYear.value;
+    console.log(name);
+
+    if (name) {
+        localStorage.setItem('name', name);
+        localStorage.setItem('Birthyear', year);
+        console.log(localStorage);
+    }
+
     formTable.submit();
+}
+
+//Own code
+for(player of playerName) {
+    // player-name is the class of each container to show tha name of the player
+    if (localStorage.length === 0) {
+        player.innerHTML = 'Player';
+    } else {
+        player.innerHTML = localStorage.getItem('name');  
+        console.log(player.innerHTML);
+    }
 }
 
 
 /* Player Data */
-let playerData = {
-    name: 'Sophia',
+/* let playerData = {
+    name: '',
     birthYear: '',
     currentYear: '',
     age: '',
-}
+} */
 
-let localPlayerData = JSON.stringify(playerData);
-console.log(localPlayerData);
-localStorage.setItem('playerData', localPlayerData);
 // Own code
 /* to show name of player in all pages and nav bar */
-let playerName = document.getElementsByClassName('player-name');
+/* let playerName = document.getElementsByClassName('player-name');
 for(player of playerName) {
-    /* player-name is the class of each container to show tha name of the player */
+    // player-name is the class of each container to show tha name of the player
     player.innerHTML = playerData.name;  
     
-}
+} */
 
 /* Play game Data */
 let playGame = {
@@ -104,7 +129,7 @@ function displayDate() {
 }
 displayDate();
 
-
+// Own code
 /**
  * A function to assign numbers to each table cell according
  * to the total number of cells in the table
@@ -120,7 +145,7 @@ function pushCellData() {
     }
 }
 
-// shuffle function from geek for geeks tutorials
+// Shuffle function from geek for geeks tutorials
 /**
  * Function to shuffle array of
  * numbers
@@ -178,6 +203,7 @@ function checkNumber() {
 }
 
 // Based on Anton Kalinin Codepen
+// Changed some code for the game
 /**
  * To start the game
  */
@@ -196,15 +222,16 @@ function gameStart() {
     //by arranging them in ascending order using sort()
     //from W3 Schools Sort array
     playGame.answerNum = playGame.shuffleNumData.sort(function(a, b){return a - b})
+    // From codegrepper.com, to disable and remove disable attribute
     document.getElementById('stop').disabled = false;
-    document.getElementById('stop').style.background = 'var(--red)';
     document.getElementById('start').disabled = true;
-    document.getElementById('start').style.background = 'none';
 
+    document.getElementById('stop').style.background = 'var(--red)';
+    document.getElementById('start').style.background = 'none';
     document.getElementById('center-cell').style.border = '2px solid var(--blue)';
 }
 
-//own code
+// Own code
 /**
  * Function to reset data from the start
  */
@@ -315,41 +342,3 @@ function tableTimer() {
 function returnData(time) {
     return time > 10 ? time : `0${time}`;
 }
-
-// ===================== open modal
-/* const openPlayerForm = document.querySelectorAll('data-modal-target');
-const closePlayerForm = document.querySelectorAll('data-close-button');
-const overlay = document.getElementById('overlay');
-
-openPlayerForm.forEach(button => {
-    button.addEventListener('click', () => {
-        const modal = document.querySelector(a.dataset.modalTarget);
-        openForm(modal)
-    })
-})
-
-closePlayerForm.forEach(button => {
-    button.addEventListener('click', () => {
-        const modal = button.closest('.player-form');
-        closeForm(modal)
-    })
-})
-
-function openForm(modal) {
-    if (modal == null) {
-        return;
-    }
-    modal.classList.add('active');
-    overlay.classList.add('active');
-}
-
-function closeForm(modal) {
-    if (modal == null) {
-        return;
-    }
-    modal.classList.remove('active');
-    overlay.classList.remove('active');
-} */
-
-//-----
-
