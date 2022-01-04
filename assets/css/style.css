@@ -17,6 +17,7 @@
     --transparent-white: rgba(255, 255, 255, 0.60);
 }
 
+/* Own code */
 body {
     font-family: 'Orbitron', sans-serif;
     font-size: 16px;
@@ -24,12 +25,14 @@ body {
     color: var(--dark-gray);
 }
 
+/* Own code */
 h1, h2, h3 {
     font-family: 'Bungee', cursive;
 }
 
 /* ---------------------------------------------- NAVIGATION BAR --------------------------- */
-/* Javascript academy tutorial except some modifications */
+/* All navbar from Javascript academy tutorial
+except some modifications */
 header {
     padding: 0 20px;
     height: 60px;
@@ -152,7 +155,7 @@ header a {
 }
 
 /* ---------------------------------------------- BACKGROUND IMAGE --------------------------- */
-/* Background are own code */
+/* Own code */
 .main-bg {
     height: 90vh;
     max-height: 100%;
@@ -162,6 +165,7 @@ header a {
     background-position: bottom;
 }
 
+/* Own code */
 .main-container {
     width: 500px;
     max-width: 900px;
@@ -171,14 +175,17 @@ header a {
     text-align: center;
 }
 
+/* Own code */
 .welcome-player {
     padding: 20px;
 }
 
+/* Own code */
 .welcome-player img {
     height: 50px;
 }
 
+/* Own code */
 .text-container {
     background: var(--transparent-white);
     border: 5px solid var(--black);
@@ -186,6 +193,7 @@ header a {
     /* margin: 50px 0; */
 }
 
+/* Own code */
 .help-play {
     padding: 20px;
 }
@@ -243,7 +251,7 @@ header a {
 }
 
 /* ---------------------------------------------- TABLE HEADER --------------------------- */
-
+/* All table section are all own code */
 .table-container {
     width: 500px;
     max-width: 100%;
@@ -274,6 +282,7 @@ header a {
 }
 
 /* ---------------------------------------------- TABLE GAME --------------------------- */
+/* All table section are all own code */
 .game-table {
     display: flex;
     justify-content: center;
@@ -301,12 +310,14 @@ table {
 }
 
 /* ---------------------------------------------- START BUTTON --------------------------- */
+/* Based on dcode tutorial for icon buttons */
 .table-btn {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* Based on dcode tutorial for icon buttons */
 .t-btn {
     margin: 0 40px;
     padding: 5px;
@@ -319,21 +330,25 @@ table {
 
 }
 
+/* Based on dcode tutorial for icon buttons */
 #start {
     background: var(--green);
 }
 
+/* Based on dcode tutorial for icon buttons */
 .t-btn:hover {
     box-shadow: 9px 9px 10px var(--transparent-black);
     cursor: pointer;
 }
 
+/* Based on dcode tutorial for icon buttons */
 #start:hover {
     transform: scale(1.1);
     transition: 0.3s;
 }
 
 /* ---------------------------------------------- Player form --------------------------- */
+/* Web Dev Simplified */
 .player-form {
     position: fixed;
     top: 50%;
@@ -351,12 +366,14 @@ table {
     display: none;
 }
 
+/* Web Dev Simplified */
 .player-form .close-container {
     display: flex;
     justify-content: flex-end;
     padding: 5px 15px;
 }
 
+/* Web Dev Simplified */
 .player-form .close-button {
     cursor: pointer;
     border: none;
@@ -365,6 +382,7 @@ table {
     background: none;
 }
 
+/* Web Dev Simplified */
 .player-form form {
     padding: 0 30px;
     display: flex;
@@ -373,11 +391,13 @@ table {
     align-content: space-around;
 }
 
+/* Own code */
 .player-form label {
     font-size: 18px;
     font-family: 'Bungee', cursive;
 }
 
+/* Own code */
 .player-form input {
     font-size: 16px;
     font-family: 'Orbitron', sans-serif;
@@ -385,6 +405,7 @@ table {
     margin-bottom: 10px;
 }
 
+/* Based on Web Dev Simplified */
 .ok-btn {
     width: 40%;
     text-align: center;
@@ -396,12 +417,13 @@ table {
     padding: 50px;
 }
 
+/* Own code */
 .ok-btn:hover {
     background: var(--yellow);
-    box-shadow: 9px 9px 10px var(--transparent-black);
-    
+    box-shadow: 9px 9px 10px var(--transparent-black); 
 }
 
+/* Web Dev Simplified */
 #overlay {
     position: fixed;
     opacity: 0;
@@ -414,6 +436,7 @@ table {
     pointer-events: none;
 }
 
+/* Based on Web Dev Simplified */
 #overlay.active {
     opacity: 1;
     pointer-events: all;
@@ -421,10 +444,12 @@ table {
 }
 
 /* ---------------------------------------------- on and off --------------------------- */
+/* Based on Web Dev Simplified */
 .active {
     display: block;
 }
 
+/* Based on Web Dev Simplified */
 .not-active {
     display: none;
 }
