@@ -34,8 +34,10 @@
 
 Mario Schulte Table is a game website to train the brain. It is mainly used to upgrade the user's reading skills to a higher level. Exercises with schulte tables is very benefitial to improve peripheral visual perception that can be useful on a daily basis, most importantly in aiming speed reading.
 
- 
-![show favicon site image here](assets/docs/image.png)
+#### Favicon
+This is the favicon used in this project.
+
+![Favicon](assets/images/favicon-icon.png)
  
 ### Functionality of Project
 
@@ -104,18 +106,23 @@ The schulte table
 ## Technology Used
  
 #### Languages, Frameworks, Editors & Version Control:
+
+* Tech stack used
+   * __[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) (HyperText Markup Language)__ for the basic structure and content for building a website.
+   * __[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) (Cascading Style Sheet)__ for styling the elements of the website.
+   * __[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)__ for interactivity of the website.
+
+* Version control
+   - [GITHUB](https://github.com)
+
+* Editor used
+   - [Gitpod](https://gitpod.com) is used as the editor for this project.
+
+### Tools Used:
  
-* add notes here on techstack...
- 
-#### Tools Used:
- 
-* add notes here on tools used to assist in developing the project...
- 
-## Database
- 
-#### Database Schema:
- 
-Detail the db schema here (if applicable)....images, thoughts behind fks etc
+* __Balsamiq Wireframes__ to make the wireframes of this project.
+* __[MediBang Paint](https://medibangpaint.com/en/)__ for the digital illustrations of this project.
+
  
 ## Features
  
@@ -140,7 +147,16 @@ During manual testing...
  
 #### Defensive Design
  
-Defensive design for this application was...
+The first thing that is loaded in the site is a guide for first time players.
+
+The fom to create a player's profile is short, simple and intuitive, with placeholders for the user. The birth year input area only accepts numbers. 
+
+All files are named according to their purpose. The code is labeled for easy access and well indented for readability. All functions in the script are documented using docstrings for future maintainability and debugging.
+
+Images use alt text in case they don't load. Tested and deployed.
+
+Overall, the design is simple, easy to navigate and with a touch of vintage gaming vibes to attract more users.
+
  
 ## Deployment
  
