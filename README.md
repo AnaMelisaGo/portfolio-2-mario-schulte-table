@@ -32,7 +32,7 @@
  
 ## What does it do and what does it need to fulfill?
 
-Mario Schulte Table is a game website to train the brain. It is mainly used to upgrade the user's reading skills to a higher level. Exercises with schulte tables will improve peripheral visual perception that can be useful on a daily basis, most importantly in aiming speed reading.
+Mario Schulte Table is a game website to train the brain. It is mainly used to upgrade the user's reading skills to a higher level. Exercises with schulte tables is very benefitial to improve peripheral visual perception that can be useful on a daily basis, most importantly in aiming speed reading.
 
  
 ![show favicon site image here](assets/docs/image.png)
