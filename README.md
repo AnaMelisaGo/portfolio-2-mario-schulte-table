@@ -73,43 +73,32 @@ The font used in the website is from Google fonts:
 
  
 ##### 2. Color Scheme
-Basic colors are chosen for the website following the color scheme from the Super Mario games: red, blue, red, yellow, white and black.
+Basic colors are chosen for the website color scheme following the colors from the Super Mario games: red, blue, green, yellow, white and black.
  
-![Color](assets/images/mario-color-scheme.png)
+![Color Scheme](assets/images/mario-color-scheme.png)
  
 ##### 3. Logo
-The logo was ... add detail, or remove as necessary
+The chosen logo for this project is the main character from the Super Mario game, Mario himself. I added some more icon logos for the buttons of the main page of the game: the mystery box and the Super mushroom. I used digital illustration app to make the the logo.
+
+I chose the main heading of the game as the home button to make it simpler.
  
-![show site logo here](assets/docs/image.png)
+![Super Mario](assets/images/mario-image.png)
  
 ##### 4. Geometry
  
-The applications geometrical aspects...
+The main purpose of the game is to force the eye to concentrate in one spot, which is the center of the table, so the game table has to stay at the center of the screen to focus the eye so the user doesn't get distracted by the background or any other element of the page. The background is from the Super Mario main setting. It wraps the whole table but is not stretched out to maintain the purpose of the game. It’s illustrated using a digital application, and the colors are softened up a bit so that it doesn’t come into conflict with the foreground elements. 
+
  
 ##### 5. Wireframing
  
-The wireframes were created for each individual page on three different screen sizes. They live below.
- 
-<details>
-<summary>Wireframes</summary>
-Home page
- 
-![Home page](static/images/home_page_wireframe.png)
- 
-Wish tree page
- 
-![Wish tree page](static/images/wish_tree_page_wireframe.png)
- 
-Send wishes page
- 
-![Send wishes page](static/images/send_wishes_wireframe.png)
- 
-Login/Register page
- 
-![Login/Register page](static/images/login_register_page_wireframe.png)
- 
-</details>
- 
+Bringing plans come into life using Balsamiq Wireframes.
+
+The homepage
+![Wireframe homepage](assets/images/wireframe-homepage.png)
+
+The schulte table
+![Wireframe game table](assets/images/wireframe-gametable.png)
+
 [Back to Top](#table-of-contents)
  
 ## Technology Used
