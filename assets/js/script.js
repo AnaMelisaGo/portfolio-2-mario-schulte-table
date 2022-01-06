@@ -372,6 +372,7 @@ function returnData(time) {
     return time > 10 ? time : `0${time}`;
 }
 
+// To get the date, get data from local storage and get the age
 let playDate = document.getElementById('play-date');
 let playerBirthyear = localStorage.getItem('Birthyear');
 let playMessage = document.getElementById('play-msg');
@@ -379,12 +380,18 @@ let currentYear = playGame.dateToday.getFullYear();
 let playerAge = document.getElementById('player-age');
 console.log(currentYear);
 
+/**
+ * Function to calculate the age of the player
+ */
 function calcAge() {
     return currentYear - playerBirthyear;
-
 }
-console.log(calcAge())
 
 playDate.textContent = document.getElementById('dateToday').textContent;
-playMessage.textContent = `${localStorage.getItem('Minutes')} ${localStorage.getItem('Seconds')}`;
-playerAge.textContent = `${calcAge()} years old`;
+playMessage.textContent = `${localStorage.getItem('Minutes')} : ${localStorage.getItem('Seconds')}`;
+
+if (localStorage.length === 0) {
+    playerAge.textContent = ` years old`;
+} else {
+    playerAge.textContent = `${calcAge()} years old`;
+}
