@@ -126,7 +126,7 @@ The schulte table
 * Version control
    - **GIT** for version control.
 
-   - [GITHUB](https://github.com) to store the project.
+   - [GITHUB](https://github.com) to store the project and deployment.
 
 * Editor
 
@@ -140,9 +140,9 @@ The schulte table
 
 ### Tools Used:
 
-* __Balsamiq Wireframes__ to make the wireframes of this project.
+* __Balsamiq Wireframes__ to make the wireframes.
 
-* __[MediBang Paint](https://medibangpaint.com/en/)__ is used for digital illustration of this project. I created the background and all the logos using this application.
+* __[MediBang Paint](https://medibangpaint.com/en/)__ is used for digital illustrations for this project. I created the background and all the logos using this application.
 
 [Back to Top](#table-of-contents)
  
