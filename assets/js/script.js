@@ -33,6 +33,8 @@ function displayGame() {
 function displayHome() {
     tableSection.classList.remove('active');
     homeSection.classList.remove('not-active');
+    playerInfo.classList.remove('active');
+
 }
 
 // ---- Form pop up
@@ -69,20 +71,17 @@ let playerName = document.getElementsByClassName('player-name');
 
 formTable.addEventListener('submit', handleSubmit);
 
-function handleSubmit(event) {
-    event.preventDefault();
-    
+function handleSubmit() {
     let name = namePlayer.value;
     let year = birthYear.value;
     console.log(name);
-
-    if (name) {
+    
+    if (localStorage.length === 2) {
+        alert('A player is already logged. Remove existing player before you create a new player.');
+    } else {
         localStorage.setItem('name', name);
         localStorage.setItem('Birthyear', year);
-        console.log(localStorage);
     }
-
-    formTable.submit();
 }
 
 //Own code
@@ -95,6 +94,33 @@ for(player of playerName) {
         console.log(player.innerHTML);
     }
 }
+
+// --- player info
+let navPlayerButton = document.getElementById('nav-player');
+let smallPlayerButton = document.getElementById('small-player');
+let playerInfo = document.getElementById('player-info');
+navPlayerButton.addEventListener('click', showPlayerInfo);
+smallPlayerButton.addEventListener('click', showPlayerInfo);
+
+/**
+ *  Function to show the player info
+ */
+function showPlayerInfo() {
+    console.log('Hello');
+    playerInfo.classList.add('active');
+    homeSection.classList.add('not-active');
+    tableSection.classList.remove('active');
+}
+
+let removePlayer = document.getElementById('remove-player-icon');
+removePlayer.addEventListener('click', clearStorage);
+
+function clearStorage() {
+    localStorage.clear();
+    location.reload();
+}
+
+
 
 /* Player Data */
 /* let playerData = {
@@ -307,6 +333,9 @@ function endGame() {
     clearInterval(cron);
     let min = document.getElementById('minute').innerText;
     let sec = document.getElementById('seconds').innerText;
+    localStorage.setItem('Minutes', min);
+    localStorage.setItem('Seconds', sec)
+
 
     document.getElementById('finish-msg').innerHTML = `You finished for ${min} min and ${sec} sec!`
     alert('finished');
@@ -342,3 +371,20 @@ function tableTimer() {
 function returnData(time) {
     return time > 10 ? time : `0${time}`;
 }
+
+let playDate = document.getElementById('play-date');
+let playerBirthyear = localStorage.getItem('Birthyear');
+let playMessage = document.getElementById('play-msg');
+let currentYear = playGame.dateToday.getFullYear();
+let playerAge = document.getElementById('player-age');
+console.log(currentYear);
+
+function calcAge() {
+    return currentYear - playerBirthyear;
+
+}
+console.log(calcAge())
+
+playDate.textContent = document.getElementById('dateToday').textContent;
+playMessage.textContent = `${localStorage.getItem('Minutes')} ${localStorage.getItem('Seconds')}`;
+playerAge.textContent = `${calcAge()} years old`;

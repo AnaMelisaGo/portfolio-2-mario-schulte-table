@@ -28,7 +28,7 @@
         <nav class="nav-game" id="my-nav-game">
             <ul>
                 <li>
-                    <a href="#" class="player-name">Player</a>
+                    <a href="#" class="player-name" id="nav-player">Player</a>
                 </li>
                 <li>
                     <a href="instruction.html" class="how">How to play</a>
@@ -43,7 +43,7 @@
             <i class="fas fa-bars"></i>
             <ul class="game-menu">
                 <li>
-                    <a href="#" class="player-name">Player</a>
+                    <a href="#" class="player-name" id="small-player">Player</a>
                 </li>
                 <li>
                     <a href="instruction.html" class="how">How to play</a>
@@ -169,10 +169,26 @@
                     </tr>
                 </table>
             </div>
+            <!-- Start and stop button -->
             <form name="form-btn" class="table-btn" id="btn-table">
                 <button type="button" name="start" id="start" class="t-btn">Start</button>
                 <button type="button" name="stop" id="stop" class="t-btn" disabled>Stop</button>
             </form>
+        </div>
+
+        <!-- Player info -->
+        <div class="player-info" id="player-info">
+            <div class="text-container play-display">
+                <h3 class="player-name">Player</h3>
+                <p id="player-age">Age: lorem lorem </p>
+            </div>
+            <div class="text-container play-display">
+                <p id="play-date">Date: lorem lorem</p>
+                <p id="play-msg">Msg: m</p>
+            </div>
+            <div class="remove-player">
+                <i class="fas fa-trash-alt" id="remove-player-icon"></i>
+            </div>
         </div>
     </section>
 

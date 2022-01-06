@@ -443,6 +443,30 @@ table {
     display: block;
 }
 
+/* ---------------------------------------------- Player Info --------------------------- */
+.player-info {
+    width: 500px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-top: 20px;
+    display: none;
+}
+
+.play-display {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 20px;
+}
+
+.remove-player {
+    width: 85%;
+    text-align: right;
+    font-size: 1.5em;
+    color: var(--red)
+
+}
+
 /* ---------------------------------------------- on and off --------------------------- */
 /* Based on Web Dev Simplified */
 .active {
@@ -453,6 +477,7 @@ table {
 .not-active {
     display: none;
 }
+
 
 /* ---------------------------------------------- HOW TO PLAY --------------------------- */
 /* Based on Web Dev Simplified */
