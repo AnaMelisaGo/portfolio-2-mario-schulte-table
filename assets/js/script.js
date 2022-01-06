@@ -1,4 +1,4 @@
-// From JavaScript Academy Tutorial Responsive navbar
+// From JavaScript Academy Tutorial for Responsive navbar
 /**
  * A function to toggle between class
  * for responsive navigation bar
@@ -11,10 +11,12 @@ function toggleGameMenu(menu) {
 let menuButton = document.getElementById('icon-game');
 menuButton.addEventListener('click', toggleGameMenu);
 
+
+
 //---- To display home and table section
-// Based on Web Dev Simplified Tutorial
-// How to build a pop up with JavaScript
-// Changed some code on my own
+/* Based on Web Dev Simplified Tutorial
+How to build a pop up with JavaScript
+Changed some code on my own */
 let playButton = document.getElementById('btn-play');
 let homeButton = document.getElementById('home-button');
 let homeSection = document.getElementById('home-section');
@@ -34,9 +36,9 @@ function displayHome() {
 }
 
 // ---- Form pop up
-// Based on Web Dev Simplified Tutorial
-// How to build a pop up with JavaScript
-// Changed some code on my own
+/* Based on Web Dev Simplified Tutorial
+How to build a pop up with JavaScript
+Changed some code on my own */
 let openForm = document.getElementById('player-btn');
 let playerForm = document.getElementById('player-form')
 let overlay = document.getElementById('overlay');
@@ -57,8 +59,9 @@ function closePlayerForm() {
 }
 
 //---- Form
-// Based on dcode Tutorial how to use Local Storage
-// Changed some code on my own
+/* Based on dcode Tutorial how to use Local Storage
+to store the player data
+Changed some code on my own */
 let formTable = document.getElementById('table-form');
 let namePlayer = document.getElementById('name');
 let birthYear = document.getElementById('birth-year');
@@ -92,7 +95,6 @@ for(player of playerName) {
         console.log(player.innerHTML);
     }
 }
-
 
 /* Player Data */
 /* let playerData = {
@@ -177,11 +179,11 @@ function checkNumber() {
             continue;
         }
 
-        //3 - assign all clicked numbers to selectedNum
+        //3 - assign all clicked numbers to selectedNum variable
         playGame.selectedNum.push(parseInt(playGame.currentSelectedNum));
         console.log(playGame.selectedNum);
         
-        //4 - Checking if its correct number or incorrect
+        //4 - Checking if it's the correct number or not
         if (playGame.answerNum[playGame.selectedNum.indexOf(parseInt(playGame.currentSelectedNum))] 
         === parseInt(playGame.currentSelectedNum) && 
         playGame.selectedNum.includes(parseInt(playGame.currentSelectedNum))) {
@@ -210,25 +212,25 @@ function checkNumber() {
 function gameStart() {
     pushCellData();
     playGame.shuffleNumData = shuffleArray(playGame.numData);
-    //GET THE CELLS THROUGH FOR LOOP AND ASSIGN THE SHUFFLED NUMBER
+    // Get the cells using FOR LOOP and assign the shuffled number
     for (let i = 0; i < playGame.tableCells.length; i++) {
         playGame.tableCells[i].style.background = 'var(--transparent-white)';
         playGame.tableCells[i].innerHTML = playGame.shuffleNumData[i];
-        //ADD EVENTLISTENER TO EACH TABLECELLS
         playGame.tableCells[i].addEventListener('click', checkNumber)
     }
     
-    //Set the answerNum for comparison to get the right sequence of numbers
-    //by arranging them in ascending order using sort()
+    /* Set the answerNum for comparison to get the right sequence of numbers
+    by arranging them in ascending order using sort() */
     //from W3 Schools Sort array
     playGame.answerNum = playGame.shuffleNumData.sort(function(a, b){return a - b})
+
     // From codegrepper.com, to disable and remove disable attribute
     document.getElementById('stop').disabled = false;
     document.getElementById('start').disabled = true;
 
     document.getElementById('stop').style.background = 'var(--red)';
     document.getElementById('start').style.background = 'none';
-    document.getElementById('center-cell').style.border = '2px solid var(--blue)';
+    document.getElementById('center-cell').style.border = '4px solid var(--blue)';
 }
 
 // Own code
@@ -249,7 +251,6 @@ function clearData() {
     document.getElementById('stop').style.background = 'initial';
     document.getElementById('start').style.background = 'var(--green)';
     document.getElementById('center-cell').style.border = 'none';
-
 }
 
 
@@ -296,7 +297,6 @@ function stop() {
 
     document.getElementById('stop').disabled = true;
     document.getElementById('start').disabled = false;
-
 }
 
 //Own code
