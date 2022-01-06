@@ -159,7 +159,7 @@ The project boasts several key features:
  
 ## Testing
  
-The W3C Markup Validator, W3C CSS Validator and Jigsaw JavaScript Validator was used to test and validate the webpage to make sure there are no errors or bugs.
+The W3C Markup Validator, W3C CSS Validator and JShint JavaScript Validator was used to test and validate the webpage to make sure there are no errors or bugs.
 <!-- need more proof like screen shots etc-->
 
 Manual testing was constantly carried out during the development of the webpage. Used the developers tools to see if there's some error in the code and styles. 
@@ -181,9 +181,12 @@ When I tried to set up the input form from index.html, there was a conflict in J
 
 The player name is shown in different part of the page: in the navbar, in the home page and above the game table. But during execution I found a bug when trying to access the player’s data. I manage to make the name of the player show in different parts of the page by using the for loop and then assigning the value of player data from the local storage.
 
-When the game has started, the timer doesn't stop when accidentally clicked the start button and though the stop button is clicked the timer keeps on going. I managed to fix it by adding a disable attribute to the button that is not needed during play time
+When the game has started, the timer doesn't stop when accidentally clicked the start button and though the stop button is clicked the timer keeps on going. I managed to fix it by adding a disable attribute to the button that is not needed during play time.
 
- 
+When tested the script through JShint, there was a warning about a function declared inside a for loop referencing an outer scope can lead to consfusing semantics.
+<!-- need to restate the function.. how?? -->
+
+
 [Back to Top](#table-of-contents)
  
 #### Defensive Design
@@ -201,13 +204,34 @@ Overall, the design is simple, easy to navigate and with a touch of vintage gami
  
 ## Deployment
  
-Detail deployment here...
+This project is deployed in GitHub. Below are the steps on how to deploy a repository.
+
+1. From the main page of the project, select settings in the menu bar just below the project’s name. 
+2. Inside settings,  scroll down to the Page menu in the left hand side menu bar. Click Page.
+3. In the source section, change none to main from the dropdown branch options and save it.
+4. A message prompts just above it, announcing your site is ready to be published.
+5. Wait for a few seconds, and refresh the page.
+6. The message will change with a check mark stating the site is published and a link provided.
+
  
 [Back to Top](#table-of-contents)
  
 ## Credits
  
-* Detail credits
+* dcode Tutorials: for some knowledge in setting up buttons
+* Javascript academy tutorial for the responsive navigation bar
+* [Css tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) for a complete guide of flexbox
+* Kevin Powell - for the video tutorials that guided me through out this project
+* Anton Kalinin Codepen - for some guides in building this project
+* Geeks for Geeks: Javascript code to shuffle an array of numbers
+* Jonas Schmetdmann (Udemy) - for teaching Javascript
+* Team 11 WishTree Holiday Hackathon - for some guides they provided during December Hackathon
+* MDN WebDocs
+* W3schools
+* Stackoverflow
+* [Better Dev](https://www.better.dev/javascript-array-filter-method) for teaching the filter method of array
+* Timer (Walter Nascimiento) <!-- add link-->
+
  
 [Back to Top](#table-of-contents)
  
