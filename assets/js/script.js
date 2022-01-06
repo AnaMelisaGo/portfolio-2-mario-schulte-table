@@ -4,9 +4,9 @@
  * for responsive navigation bar
  * 
  */
-function toggleGameMenu(menu) {
-    this.classList.toggle('open')
-};
+ function toggleGameMenu(menu) {
+    this.classList.toggle('open');
+}
 
 let menuButton = document.getElementById('icon-game');
 menuButton.addEventListener('click', toggleGameMenu);
@@ -42,7 +42,7 @@ function displayHome() {
 How to build a pop up with JavaScript
 Changed some code on my own */
 let openForm = document.getElementById('player-btn');
-let playerForm = document.getElementById('player-form')
+let playerForm = document.getElementById('player-form');
 let overlay = document.getElementById('overlay');
 
 let closeForm = document.getElementById('close-button');
@@ -85,7 +85,7 @@ function handleSubmit() {
 }
 
 //Own code
-for(player of playerName) {
+for(let player of playerName) {
     // player-name is the class of each container to show tha name of the player
     if (localStorage.length === 0) {
         player.innerHTML = 'Player';
@@ -120,25 +120,6 @@ function clearStorage() {
     location.reload();
 }
 
-
-
-/* Player Data */
-/* let playerData = {
-    name: '',
-    birthYear: '',
-    currentYear: '',
-    age: '',
-} */
-
-// Own code
-/* to show name of player in all pages and nav bar */
-/* let playerName = document.getElementsByClassName('player-name');
-for(player of playerName) {
-    // player-name is the class of each container to show tha name of the player
-    player.innerHTML = playerData.name;  
-    
-} */
-
 /* Play game Data */
 let playGame = {
     dateToday: new Date(),
@@ -148,7 +129,7 @@ let playGame = {
     answerNum: [ ],
     selectedNum: [ ],
     currentSelectedNum: '',
-}
+};
 
 // Own code
 console.log(playGame.dateToday.toDateString()); // to show date of today
@@ -169,7 +150,7 @@ function pushCellData() {
     
     //set the number for the table cells by getting the length of the tablecells
     for(let i = 1; i < playGame.tableCells.length + 1; i++) {
-        playGame.numData.push(i)
+        playGame.numData.push(i);
     }
 }
 
@@ -210,11 +191,10 @@ function checkNumber() {
         console.log(playGame.selectedNum);
         
         //4 - Checking if it's the correct number or not
-        if (playGame.answerNum[playGame.selectedNum.indexOf(parseInt(playGame.currentSelectedNum))] 
-        === parseInt(playGame.currentSelectedNum) && 
+        if (playGame.answerNum[playGame.selectedNum.indexOf(parseInt(playGame.currentSelectedNum))] === parseInt(playGame.currentSelectedNum) && 
         playGame.selectedNum.includes(parseInt(playGame.currentSelectedNum))) {
             console.log(`It's correct`);
-            this.style.background = 'var(--green)'
+            this.style.background = 'var(--green)';
         } else {
             playGame.answerNum.splice(0, 0, playGame.selectedNum.indexOf(parseInt(playGame.currentSelectedNum)));
             playGame.answerNum = playGame.answerNum.filter(numb => numb !== parseInt(playGame.currentSelectedNum));
@@ -242,13 +222,15 @@ function gameStart() {
     for (let i = 0; i < playGame.tableCells.length; i++) {
         playGame.tableCells[i].style.background = 'var(--transparent-white)';
         playGame.tableCells[i].innerHTML = playGame.shuffleNumData[i];
-        playGame.tableCells[i].addEventListener('click', checkNumber)
+        playGame.tableCells[i].addEventListener('click', checkNumber);
     }
     
     /* Set the answerNum for comparison to get the right sequence of numbers
     by arranging them in ascending order using sort() */
     //from W3 Schools Sort array
-    playGame.answerNum = playGame.shuffleNumData.sort(function(a, b){return a - b})
+    playGame.answerNum = playGame.shuffleNumData.sort(function(a, b) {
+            return a - b;
+    });
 
     // From codegrepper.com, to disable and remove disable attribute
     document.getElementById('stop').disabled = false;
@@ -334,10 +316,10 @@ function endGame() {
     let min = document.getElementById('minute').innerText;
     let sec = document.getElementById('seconds').innerText;
     localStorage.setItem('Minutes', min);
-    localStorage.setItem('Seconds', sec)
+    localStorage.setItem('Seconds', sec);
 
 
-    document.getElementById('finish-msg').innerHTML = `You finished for ${min} min and ${sec} sec!`
+    document.getElementById('finish-msg').innerHTML = `You finished for ${min} min and ${sec} sec!`;
     alert('finished');
 
     document.getElementById('stop').disabled = true;

@@ -292,7 +292,6 @@ header a {
     padding: 15px 0;
 
     background: var(--transparent-white);
-    border: 2px solid var(--transparent-white);
 }
 
 table {
