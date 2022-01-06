@@ -235,6 +235,7 @@ header a {
 
 .btn:hover {
     box-shadow: 9px 9px 10px var(--black);
+    /* From JavaScript Academy tutorial */
     transform: scale(1.1);
     transition: 0.3s;
     cursor: pointer;
@@ -480,18 +481,27 @@ table {
 
 }
 
-.btn-x {
+.x-container {
     text-align: right;
     margin-bottom: 5px;
 }
 
-.btn-x a {
+.x-container a {
     text-decoration: none;
+    padding: 0 5px;
+}
+
+.x-container a:hover {
+    /* From JavaScript Academy tutorials */
+    transform: scale(1.1);
+    transition: 0.3s;
+    box-shadow: 4px 4px 8px var(--transparent-black); 
+}
+
+.btn-x {
     color: white;
     font-size: 20px;
-    border: 1px solid green;
-    background: green;
-    padding: 0 5px;
+    background: var(--yellow);
 }
 
 .ins-container div:not(:first-child) {
@@ -507,6 +517,14 @@ table {
     display: block;
     margin: 0 auto;
 }
+
+/* ---------------------------------------------- MEDIA QUERIES --------------------------- */
+.btn-y {
+    color: white;
+    font-size: 20px;
+    background: var(--green);
+}
+
 
 
 /* ---------------------------------------------- MEDIA QUERIES --------------------------- */
@@ -554,5 +572,26 @@ table {
     .game-menu {
         right: -24px;
         width: 380%;
+    }
+    .ins-container {
+        width: 250px;
+    }
+    .ins-container div:not(:first-child) {
+        margin-bottom: 10px;
+    }
+    .ins-container h2 {
+        font-size: 15px;
+    }
+
+    .btn-x {
+        font-size: 15px;
+    }
+
+    .ins-container ul, ol {
+        font-size: 12px;
+    }
+
+    .ins-container p {
+        font-size: 12px;
     }
 }
