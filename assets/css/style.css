@@ -458,6 +458,10 @@ table {
     padding: 20px;
 }
 
+#play-msg, #play-correct {
+    text-align: right;
+}
+
 .remove-player {
     width: 85%;
     text-align: right;
@@ -542,7 +546,7 @@ table {
     margin: 0 auto;
 }
 
-/* ---------------------------------------------- MEDIA QUERIES --------------------------- */
+/* ----------------------------------------------  --------------------------- */
 .btn-y {
     color: white;
     font-size: 20px;

@@ -32,7 +32,7 @@
  
 ## What does it do and what does it need to fulfill?
 
-Mario Schulte Table is a game website to train the brain. It is mainly used to upgrade the user's reading skills to a higher level. Exercises with schulte tables is very benefitial to improve peripheral visual perception that can be useful on a daily basis, most importantly in aiming speed reading.
+Mario Schulte Table is a game website to train the brain. It is mainly used to upgrade the user's reading skills to a higher level. Exercises with schulte tables is very benefitial to improve peripheral visual perception that can be useful on a daily basis, most importantly in aiming speed reading. The goal of the game is not to get a high score nor to finish it in the least amount of time. It's aimed to widen the peripheral vision concentrating the eye in one single spot in the table. Just in the center of the table without moving the eye away from that spot.
 
 ### Favicon
 This is the favicon used in this project.
@@ -41,7 +41,8 @@ This is the favicon used in this project.
  
 ### Functionality of Project
 
-The goal of the game is not to get a high score nor to finish it in the least amount of time. It's aimed to widen the peripheral vision concentrating the eye in one single spot in the table. Just in the center of the table without moving the eye away from that spot.
+To play games while training the brain to maintain the brain in good condition, to add player's name and age to track player's progress.
+
 
 [Back to top](#table-of-contents)
  
@@ -219,12 +220,12 @@ This project is deployed in GitHub. Below are the steps on how to deploy a repos
 ## Credits
 
 ### Code
-* dcode Tutorials: for some knowledge in setting up buttons and how to use the local storage.
+* dcode Tutorials: for some knowledge in setting up buttons and [how to use the local storage](https://youtu.be/k8yJCeuP6I8).
 * [JavaScript Academy Tutorial](https://www.youtube.com/watch?v=OjQP7rPwJyE&t=334s) for the responsive navigation bar.
 * [Css tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) for a complete guide of flexbox.
 * Kevin Powell - for the video tips.
-* Anton Kalinin Codepen - for some guides in building this project.
-* Geeks for Geeks: Javascript code to shuffle an array of numbers.
+* [Anton Kalinin Codepen](https://codepen.io/ssh) - for some guides in building this project.
+* [Geeks for Geeks](https://www.geeksforgeeks.org/how-to-shuffle-an-array-using-javascript/): Javascript code to shuffle an array of numbers.
 * Jonas Schmetdmann (Udemy) - for teaching Javascript.
 * Team 11 WishTree Holiday Hackathon - for some guides they provided during December Hackathon.
 * MDN WebDocs
