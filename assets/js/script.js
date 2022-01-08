@@ -227,7 +227,7 @@ function displayDate() {
 
         if (playGame.selectedNum.indexOf(parseInt(playGame.currentSelectedNum)) + 1 === playGame.tableCells.length) {
             endGame();
-            clearData();
+            //clearData();
             document.getElementById('start').textContent = `Start again?`;
         }
     }
@@ -242,7 +242,7 @@ function displayDate() {
     pushCellData();
     playGame.shuffleNumData = shuffleArray(playGame.numData);
     // Get the cells using FOR LOOP and assign the shuffled number
-    // From eeks for geeks on how to shuffle an array of numbers
+    // From geeks for geeks on how to shuffle an array of numbers
     for (let i = 0; i < playGame.tableCells.length; i++) {
         playGame.tableCells[i].style.background = 'var(--transparent-white)';
         playGame.tableCells[i].innerHTML = playGame.shuffleNumData[i];
@@ -292,6 +292,7 @@ function displayDate() {
  * https://dev.to/walternascimentobarroso/creating-a-timer-with-javascript-8b7
  */
  function start() {
+    clearData();
     cron = setInterval(() => { tableTimer(); }, 10);
     gameStart();
     document.getElementById('finish-msg').innerHTML = ``;
@@ -337,10 +338,12 @@ function endGame() {
     localStorage.setItem('Correct', correctNumb);
     localStorage.setItem('Date', date);
 
-    document.getElementById('finish-msg').innerHTML = `You finished for ${min} min and ${sec} sec!`;
-    alert('finished');
+    document.getElementById('finish-msg').innerHTML = `${correctNumb} correct numbers`;
+    alert('Finished');
     document.getElementById('stop').disabled = true;
     document.getElementById('start').disabled = false;
+    document.getElementById('start').style.background = 'var(--green)';
+    document.getElementById('stop').style.background = 'initial';
     displayTimeFinish();
 }
 
@@ -357,7 +360,7 @@ function calcAge() {
  */
 function showPlayerAge() {
     if (playerBirthyear === null) {
-        playerAge.textContent = `Age: `;
+        playerAge.textContent = `Age: ?`;
     } else {
         playerAge.textContent = `Age: ${calcAge()} years old`;
     }
@@ -371,12 +374,8 @@ function displayTimeFinish(){
     playDate.textContent = `${localStorage.getItem('Date')}`;
     playMessage.textContent = `Finished for ${localStorage.getItem('Minutes')} : ${localStorage.getItem('Seconds')}`;
     playCorrect.textContent = `${localStorage.getItem('Correct')} correct numbers!`
-
 }
 
-// ----- // ----- // ----- // ----- // ----- // ----- // ----- // ----- // ----- // ----- 
-
-//======================================================= VARIABLES
 // Nav bar
 let menuButton = document.getElementById('icon-game');
 
@@ -429,12 +428,6 @@ let playCorrect = document.getElementById('play-correct');
 let playerAge = document.getElementById('player-age');
 let currentYear = playGame.dateToday.getFullYear();
 let playerBirthyear = localStorage.getItem('Birthyear');
-
-
-
-// ----- // ----- // ----- // ----- // ----- // ----- // ----- // ----- // ----- // ----- 
-
-//======================================================= EVENT LISTENERS
 
 showPlayerName();
 
