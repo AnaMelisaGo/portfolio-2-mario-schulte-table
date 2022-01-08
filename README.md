@@ -193,7 +193,7 @@ When tested the script through JShint, there was a warning about a function decl
  
 The first thing that is loaded in the site is a guide for first time players.
 
-The fom to create a player's profile is short, simple and intuitive, with placeholders for the user. The birth year input area only accepts numbers. 
+The form to create a player's profile is short, simple and intuitive, with placeholders for the user. The birth year input area only accepts numbers. 
 
 All files are named according to their purpose. The code is labeled for easy access and well indented for readability. All functions in the script are documented using docstrings for future maintainability and debugging.
 
@@ -206,40 +206,55 @@ Overall, the design is simple, easy to navigate and with a touch of vintage gami
  
 This project is deployed in GitHub. Below are the steps on how to deploy a repository.
 
-1. From the main page of the project, select settings in the menu bar just below the project’s name. 
-2. Inside settings,  scroll down to the Page menu in the left hand side menu bar. Click Page.
-3. In the source section, change none to main from the dropdown branch options and save it.
+1. From the main page of the repository, select `Settings` in the menu bar just below the project’s name. 
+2. Within Settings, scroll down from the left hand side menu bar. Click `Page`.
+3. In the source section, change none to `main` from the dropdown branch options and click `Save`.
 4. A message prompts just above it, announcing your site is ready to be published.
 5. Wait for a few seconds, and refresh the page.
-6. The message will change with a check mark stating the site is published and a link provided.
+6. The message will change with a check mark stating the site is published and a link is provided.
 
  
 [Back to Top](#table-of-contents)
  
 ## Credits
- 
-* dcode Tutorials: for some knowledge in setting up buttons
-* Javascript academy tutorial for the responsive navigation bar
-* [Css tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) for a complete guide of flexbox
-* Kevin Powell - for the video tutorials that guided me through out this project
-* Anton Kalinin Codepen - for some guides in building this project
-* Geeks for Geeks: Javascript code to shuffle an array of numbers
-* Jonas Schmetdmann (Udemy) - for teaching Javascript
-* Team 11 WishTree Holiday Hackathon - for some guides they provided during December Hackathon
+
+### Code
+* dcode Tutorials: for some knowledge in setting up buttons and how to use the local storage.
+* [JavaScript Academy Tutorial](https://www.youtube.com/watch?v=OjQP7rPwJyE&t=334s) for the responsive navigation bar.
+* [Css tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) for a complete guide of flexbox.
+* Kevin Powell - for the video tips.
+* Anton Kalinin Codepen - for some guides in building this project.
+* Geeks for Geeks: Javascript code to shuffle an array of numbers.
+* Jonas Schmetdmann (Udemy) - for teaching Javascript.
+* Team 11 WishTree Holiday Hackathon - for some guides they provided during December Hackathon.
 * MDN WebDocs
 * W3schools
 * Stackoverflow
-* [Better Dev](https://www.better.dev/javascript-array-filter-method) for teaching the filter method of array
-* Timer (Walter Nascimiento) <!-- add link-->
+* [Better Dev](https://www.better.dev/javascript-array-filter-method) for the filter method of array guide.
+* [Walter Nascimento](https://dev.to/walternascimentobarroso/creating-a-timer-with-javascript-8b7) for setting the timer tutorial from dev.to.
+* [Code grepper](https://www.codegrepper.com/code-examples/javascript/remove+button+disabled+js) for the disabled attribute guide.
+* [Web Dev Simplified](https://youtu.be/MBaw_6cPmAw) for the video tutorial how to create a modal.
 
- 
+### Content
+* Speed Reading app
+* Librain: Schulte Table - for the idea
+
+
+### Media
+
+* All the images used as icons and background are my own illustrations created from MediBang paint based on the Super Mario games.
+
+
 [Back to Top](#table-of-contents)
  
 #### Special Thanks & Acknowledgements:
  
-* Team 11 🤜
+* To all the members of Team 11 🤜 (Marina, Anthony, Chris and Debbie) December Hackathon
+* My mentor
+* To my family and friends, and most of all my daughter, Sophia, my inspiration.
+
  
-###### <i>Disclaimer: This project was created for educational use only as part of Portfolio Project 2</i>
+###### <i>Disclaimer: This project was created for educational use only as part of my Portfolio Project 2</i>
  
 [Back to Top](#table-of-contents)
 
