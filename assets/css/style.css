@@ -14,7 +14,7 @@
     --gray: #c9c9c9;
     --dark-gray: #2e2626;
     --transparent-black: rgba(46, 38, 38, 0.9);
-    --transparent-white: rgba(255, 255, 255, 0.60);
+    --transparent-white: rgba(255, 255, 255, 0.85);
 }
 
 /* Own code */
@@ -129,8 +129,8 @@ header a {
     display: none;
     position: absolute;
     top: 60px;
-    right: -54px;
-    height: calc(35vh - 50px);
+    right: -95px;
+    height: calc(40vh - 50px);
     width: 300%;
     background-color: var(--transparent-black);
     list-style-type: none;
@@ -162,7 +162,7 @@ header a {
     background-size: contain;
     background-image: url('../images/mario-bg.png');
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: top;
 }
 
 /* Own code */
@@ -553,7 +553,7 @@ table {
 
 /* ---------------------------------------------- MEDIA QUERIES --------------------------- */
 /* All media queries are own code */
-@media screen and (max-width: 1220px){
+@media screen and (max-width: 1220px) {
     .nav-game {
         display: none;
     }
@@ -562,13 +562,13 @@ table {
     }
 }
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1000px) {
     .main-container {
         width: 400px;
     }
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
     .nav-game {
         display: none;
     }
@@ -586,7 +586,7 @@ table {
     }
 }
 
-@media screen and (max-width: 430px){
+@media screen and (max-width: 430px) {
     .logo h1 {
         font-size: 15px;
     }
@@ -617,5 +617,56 @@ table {
 
     .ins-container p {
         font-size: 12px;
+    }
+    .play-display {
+        font-size: 11px;
+    }
+    
+    .timer {
+        font-size: 13px;
+    }
+
+    #start, #stop {
+        height: fit-content;
+    }
+}
+
+@media screen and (max-height: 670px) {
+    .welcome-player {
+        padding: 5px;
+    }
+
+    .welcome-player img {
+        height: 65px;
+    }
+
+    .welcome-player h2 {
+        font-size: 22px;
+    }
+    
+
+    .help-play p {
+        font-size: 13px;
+    }
+
+    .btn {
+        width: 230px;
+    }
+
+    .ins-container {
+        transform: translate(0, -8%);
+    }
+}
+
+@media screen and (max-height: 500px) {
+    .help-play h3 {
+        font-size: 16px;
+    }
+    .btn {
+        margin: 5px 0;
+    }
+
+    .btn-container {
+        margin: 0;
     }
 }

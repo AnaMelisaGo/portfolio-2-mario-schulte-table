@@ -76,22 +76,32 @@ function handleSubmit() {
     let year = birthYear.value;
     console.log(name);
     
-    if (localStorage.length === 2) {
+    /* if (localStorage.length === 2) {
         alert('A player is already logged. Remove existing player before you create a new player.');
     } else {
-        localStorage.setItem('name', name);
+        localStorage.setItem('Name', name);
+        localStorage.setItem('Birthyear', year);
+    } */
+    if (localStorage.getItem('Name') && localStorage.getItem('Birthyear') !== null) {
+        console.log('yes!')
+        alert('A player is already logged. Remove existing player before you create a new player.');
+    } else {
+        console.log('no!')
+        localStorage.setItem('Name', name);
         localStorage.setItem('Birthyear', year);
     }
+
 }
+
 
 //Own code
 for(let player of playerName) {
     // player-name is the class of each container to show tha name of the player
-    if (localStorage.length === 0) {
-        player.innerHTML = 'Player';
-    } else {
-        player.innerHTML = localStorage.getItem('name');  
+    if (localStorage.getItem('Name') !== null) {
+        player.innerHTML = localStorage.getItem('Name');  
         console.log(player.innerHTML);
+    } else {
+        player.innerHTML = 'Player';
     }
 }
 
@@ -112,9 +122,14 @@ function showPlayerInfo() {
     tableSection.classList.remove('active');
 }
 
+// --- To delete a players info
+// Own code
 let removePlayer = document.getElementById('remove-player-icon');
 removePlayer.addEventListener('click', clearStorage);
 
+/**
+ *  Function to delete the players data from the local storage
+ */
 function clearStorage() {
     localStorage.clear();
     location.reload();
@@ -219,6 +234,7 @@ function gameStart() {
     pushCellData();
     playGame.shuffleNumData = shuffleArray(playGame.numData);
     // Get the cells using FOR LOOP and assign the shuffled number
+    // From eeks for geeks on how to shuffle an array of numbers
     for (let i = 0; i < playGame.tableCells.length; i++) {
         playGame.tableCells[i].style.background = 'var(--transparent-white)';
         playGame.tableCells[i].innerHTML = playGame.shuffleNumData[i];
@@ -318,13 +334,11 @@ function endGame() {
     localStorage.setItem('Minutes', min);
     localStorage.setItem('Seconds', sec);
 
-
     document.getElementById('finish-msg').innerHTML = `You finished for ${min} min and ${sec} sec!`;
     alert('finished');
 
     document.getElementById('stop').disabled = true;
     document.getElementById('start').disabled = false;
-
 }
 
 //dev.to Walter Nascimento
@@ -355,6 +369,7 @@ function returnData(time) {
 }
 
 // To get the date, get data from local storage and get the age
+// Own code
 let playDate = document.getElementById('play-date');
 let playerBirthyear = localStorage.getItem('Birthyear');
 let playMessage = document.getElementById('play-msg');
@@ -362,6 +377,7 @@ let currentYear = playGame.dateToday.getFullYear();
 let playerAge = document.getElementById('player-age');
 console.log(currentYear);
 
+// Own code
 /**
  * Function to calculate the age of the player
  */
@@ -372,6 +388,7 @@ function calcAge() {
 playDate.textContent = document.getElementById('dateToday').textContent;
 playMessage.textContent = `${localStorage.getItem('Minutes')} : ${localStorage.getItem('Seconds')}`;
 
+// Own code
 if (localStorage.length === 0) {
     playerAge.textContent = ` years old`;
 } else {
