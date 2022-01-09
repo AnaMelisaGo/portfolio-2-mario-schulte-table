@@ -6,7 +6,7 @@
  * From JavaScript Academy Tutorial for Responsive navbar
  * https://youtu.be/OjQP7rPwJyE
  */
- function toggleGameMenu(menu) {
+function toggleGameMenu(menu) {
     this.classList.toggle('open');
 }
 
@@ -16,7 +16,7 @@
  * How to build a pop up with JavaScript
  * https://youtu.be/MBaw_6cPmAw
  */
- function displayGame() {
+function displayGame() {
     tableSection.classList.add('active');
     homeSection.classList.add('not-active');
     displayDate();
@@ -50,14 +50,14 @@ function focusPlayerName() {
  * How to build a pop up with JavaScript
  * https://youtu.be/MBaw_6cPmAw
  */
- function openPlayerForm() {
+function openPlayerForm() {
     playerForm.classList.add('active');
     overlay.classList.add('active');
     focusPlayerName();
 }
 
 /**
- *  Function to close form when the X button is clicked
+ * Function to close form when the X button is clicked
  * Based on Web Dev Simplified Tutorial
  * How to build a pop up with JavaScript
  * https://youtu.be/MBaw_6cPmAw
@@ -72,7 +72,7 @@ function closePlayerForm() {
  *  Based on dcode Tutorial how to use Local Storage to store the player data
  *  https://youtu.be/k8yJCeuP6I8
  */
- function handleSubmit() {
+function handleSubmit() {
     let name = namePlayer.value;
     let year = birthYear.value;
     console.log(name);
@@ -89,7 +89,7 @@ function closePlayerForm() {
  * Function to show the player's name in the webpage
  * Own code
  */
- function showPlayerName() {
+function showPlayerName() {
     for(let player of playerName) {
         // player-name is the class of each container to show tha name of the player
         if (localStorage.getItem('Name') !== null) {
@@ -105,7 +105,7 @@ function closePlayerForm() {
  * Function to calculate the age of the player
  * Own code
  */
- function calcAge() {
+function calcAge() {
     return currentYear - playerBirthyear;
 }
 
@@ -125,7 +125,7 @@ function showPlayerAge() {
  *  Function to show the player info section
  *  Own code
  */
- function showPlayerInfo() {
+function showPlayerInfo() {
     console.log('Hello');
     playerInfo.classList.add('active');
     homeSection.classList.add('not-active');
@@ -139,7 +139,7 @@ function showPlayerAge() {
  *  Function to delete the players data from the local storage
  *  Own code
  */
- function clearStorage() {
+function clearStorage() {
     localStorage.clear();
     location.reload();
 }
@@ -157,7 +157,7 @@ function displayDate() {
  * Walter Nascimento
  * https://dev.to/walternascimentobarroso/creating-a-timer-with-javascript-8b7
  */
- function tableTimer() {
+function tableTimer() {
     if ((millisecond += 10) === 1000) {
         millisecond = 0;
         second++;
@@ -176,7 +176,7 @@ function displayDate() {
  * Walter Nascimento
  * https://dev.to/walternascimentobarroso/creating-a-timer-with-javascript-8b7
  */
- function returnData(time) {
+function returnData(time) {
     return time > 10 ? time : `0${time}`;
 }
 
@@ -184,7 +184,7 @@ function displayDate() {
  * A function to assign numbers to each table cell according to the total number of cells in the table
  * Own code
  */
- function pushCellData() {
+function pushCellData() {
     // Get the tablecells
     playGame.tableCells = document.getElementsByClassName('cell');
     console.log(`This is the total number of cells: ${playGame.tableCells.length}`);
@@ -200,7 +200,7 @@ function displayDate() {
  * geek for geeks tutorials
  * https://www.geeksforgeeks.org/how-to-shuffle-an-array-using-javascript/
  */
- function shuffleArray(array) {
+function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
         let k = array[i];
@@ -215,7 +215,7 @@ function displayDate() {
  * Based on Anton Kalinin Codepen
  * https://codepen.io/ssh
  */
- function checkNumber() {
+function checkNumber() {
     //1- get each click
     let len = playGame.tableCells.length - 1;
     for (let i = playGame.tableCells.length - len; i > 0; i--) {
@@ -229,8 +229,6 @@ function displayDate() {
 
         //3 - assign all clicked numbers to selectedNum variable
         playGame.selectedNum.push(parseInt(playGame.currentSelectedNum));
-        console.log(playGame.selectedNum);
-        console.log(playGame.answerNum);
         
         //4 - Checking if it's the correct number or not
         if (playGame.answerNum[playGame.selectedNum.indexOf(parseInt(playGame.currentSelectedNum))] === parseInt(playGame.currentSelectedNum) && 
@@ -259,7 +257,7 @@ function displayDate() {
  * Based on Anton Kalinin Codepen
  * Changed some code for the game
  */
- function gameStart() {
+function gameStart() {
     pushCellData();
     playGame.shuffleNumData = shuffleArray(playGame.numData);
     // Get the cells using FOR LOOP and assign the shuffled number
@@ -289,7 +287,7 @@ function displayDate() {
  * Function to reset data from the start
  * Own code
  */
- function clearData() {
+function clearData() {
     for (let i = 0; i < playGame.tableCells.length; i++) {
         playGame.tableCells[i].innerHTML = '';
         playGame.tableCells[i].style.background = 'var(--transparent-white)';
@@ -311,7 +309,7 @@ function displayDate() {
  * Based on Walter Nascimento
  * https://dev.to/walternascimentobarroso/creating-a-timer-with-javascript-8b7
  */
- function start() {
+function start() {
     clearData();
     cron = setInterval(() => { tableTimer(); }, 10);
     gameStart();
@@ -430,7 +428,6 @@ let second = 0;
 let millisecond = 0;
 let cron;
 
-
 // Play game Data
 let playGame = {
     dateToday: new Date(),
@@ -477,8 +474,8 @@ navPlayerButton.addEventListener('click', showPlayerInfo);
 smallPlayerButton.addEventListener('click', showPlayerInfo);
 removePlayer.addEventListener('click', clearStorage);
 
-document.getElementById('start').addEventListener('click', start);
-document.getElementById('stop').addEventListener('click', stop);
+startButton.addEventListener('click', start);
+stopButton.addEventListener('click', stop);
 
 exitGame.addEventListener('mouseover', openDoor);
 exitGame.addEventListener('mouseout', closeDoor);
