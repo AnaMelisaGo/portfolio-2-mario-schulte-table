@@ -302,6 +302,12 @@ function clearData() {
     stopButton.style.background = 'initial';
     startButton.style.background = 'var(--green)';
     document.getElementById('center-cell').style.border = 'none';
+
+    let min = document.getElementById('minute').innerText;
+    let sec = document.getElementById('seconds').innerText;
+    min = '00';
+    sec = '00';
+    document.getElementById('milliseconds').innerText = '00';
 }
 
 /**
@@ -328,12 +334,9 @@ function stop() {
     second = 0;
     millisecond = 0;
     
-    let min = document.getElementById('minute').innerText;
-    let sec = document.getElementById('seconds').innerText;
-    min = '00';
-    sec = '00';
-    document.getElementById('milliseconds').innerText = '00';
-    finishMsg.innerHTML = `Game stopped at ${min} min and ${sec} sec!`;
+    let mins = document.getElementById('minute').innerText;
+    let secs = document.getElementById('seconds').innerText;
+    finishMsg.innerHTML = `Game stopped at ${mins} min and ${secs} sec!`;
     alert(`Oops! you stopped the game!`);
 
     clearData();
@@ -427,6 +430,8 @@ let minute = 0;
 let second = 0;
 let millisecond = 0;
 let cron;
+let min = document.getElementById('minute').innerText;
+let sec = document.getElementById('seconds').innerText;
 
 // Play game Data
 let playGame = {
