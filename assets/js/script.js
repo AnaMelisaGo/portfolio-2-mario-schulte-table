@@ -240,7 +240,7 @@ function displayDate() {
             playGame.correctNum.push(this.innerHTML);
             console.log(playGame.correctNum);
         } else {
-            playGame.answerNum.splice(0, 0, playGame.selectedNum.indexOf(parseInt(playGame.currentSelectedNum)));
+            playGame.answerNum.splice(0, 0, playGame.currentSelectedNum);
             playGame.answerNum = playGame.answerNum.filter(numb => numb !== parseInt(this.innerHTML));
             console.log(`It's incorrect`);
             this.style.background = 'var(--red)';
