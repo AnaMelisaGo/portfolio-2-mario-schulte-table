@@ -316,9 +316,7 @@ function start() {
     clearData();
     cron = setInterval(() => { tableTimer(); }, 10);
     gameStart();
-
     finishMsg.innerHTML = '';
-    
 }
 
 /**
