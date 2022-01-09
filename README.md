@@ -89,7 +89,9 @@ Basic colors are chosen for the website color scheme following the Super Mario g
  
 ##### 3. Logo
 
-![Super Mario](assets/images/mario-image.png)
+<p style="text-align:center">
+   <img src="assets/images/mario-image.png" alt="Super Mario">
+</p>
 
 The chosen logo for this project is the main character from the Super Mario games, Mario himself. I added some more icon logos for the buttons of the main page of the game: the mystery box and the Super mushroom. I used digital illustration app to make all the logos.
 
@@ -163,6 +165,14 @@ The project boasts several key features:
 ## Testing
  
 The W3C Markup Validator, W3C CSS Validator and JShint JavaScript Validator was used to test and validate the webpage to make sure there are no errors or bugs.
+<p style="text-align:center;">
+    <a href="https://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px;"
+            src="https://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" />
+    </a>
+</p>
+
 <!-- need more proof like screen shots etc-->
 
 Manual testing was constantly carried out during the development of the webpage. Used the developers tools to see if there's some error in the code and styles. 
@@ -186,7 +196,7 @@ The player name is shown in different part of the page: in the navbar, in the ho
 
 When the game has started, the timer doesn't stop when accidentally clicked the start button and even though the stop button is clicked the timer keeps on going. I managed to fix it by adding a disable attribute to the button that is not needed during play time.
 
-When tested the script through JShint, there was a warning about a function declared inside a for loop referencing an outer scope can lead to consfusing semantics. It's a function inside the filter method. I check it with my mentor. I ignored the warning since it's not really affecting the proper performance of the script.
+When tested the script through JShint, there was a warning about a function declared inside a for loop referencing an outer scope can lead to consfusing semantics. It's a function inside the filter method. I check it with my mentor. I managed to get rid of the warning by not using the variable outside the bracket.
 
 [Back to Top](#table-of-contents)
  
@@ -231,7 +241,7 @@ This project is deployed in GitHub. Below are the steps on how to deploy a repos
 * [Css tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) for a complete guide of flexbox.
 * Kevin Powell - for the video tips.
 * [Anton Kalinin Codepen](https://codepen.io/ssh) - for some guides in building this project.
-* [Geeks for Geeks](https://www.geeksforgeeks.org/how-to-shuffle-an-array-using-javascript/): Javascript code to shuffle an array of numbers.
+* Geeks for Geeks: [Javascript code to shuffle an array of numbers](https://www.geeksforgeeks.org/how-to-shuffle-an-array-using-javascript/), [add focus method to input form](https://www.geeksforgeeks.org/set-the-focus-to-html-form-element-using-javascript/)
 * Jonas Schmetdmann (Udemy) - for teaching Javascript.
 * Team 11 WishTree Holiday Hackathon - for some guides they provided during December Hackathon.
 * MDN WebDocs
