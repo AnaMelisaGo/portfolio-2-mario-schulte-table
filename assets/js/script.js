@@ -241,7 +241,7 @@ function displayDate() {
             console.log(playGame.correctNum);
         } else {
             playGame.answerNum.splice(0, 0, playGame.selectedNum.indexOf(parseInt(playGame.currentSelectedNum)));
-            playGame.answerNum = playGame.answerNum.filter(numb => numb !== parseInt(playGame.currentSelectedNum));
+            playGame.answerNum = playGame.answerNum.filter(numb => numb !== parseInt(this.innerHTML));
             console.log(`It's incorrect`);
             this.style.background = 'var(--red)';
         }
@@ -375,7 +375,7 @@ function endGame() {
 function displayTimeFinish(){
     playDate.textContent = `${localStorage.getItem('Date')}`;
     playMessage.textContent = `Finished for ${localStorage.getItem('Minutes')} : ${localStorage.getItem('Seconds')}`;
-    playCorrect.textContent = `${localStorage.getItem('Correct')} correct numbers!`
+    playCorrect.textContent = `${localStorage.getItem('Correct')} correct numbers!`;
 }
 
 /**
