@@ -535,7 +535,6 @@ table {
 }
 
 /* Based on Web Dev Simplified */
-
 .ins-container {
     width: 500px;
     max-width: 100%;
@@ -602,6 +601,7 @@ table {
     .nav-game {
         display: none;
     }
+
     .game-icon {
         display: block;
     }
@@ -616,14 +616,6 @@ table {
 @media screen and (max-width: 640px) {
     .logo h1 {
         font-size: 1.5em;
-    }
-
-    .nav-game {
-        display: none;
-    }
-
-    .game-icon {
-        display: block
     }
     
     .main-bg {
@@ -649,14 +641,17 @@ table {
     .logo h1 {
         font-size: 15px;
     }
+
     .game-icon i {
         margin-left: 50px;
     }
+
     .game-menu {
         right: -24px;
         width: 380%;
         height: calc(50vh - 50px)
     }
+
     .ins-container {
         width: 250px;
     }
@@ -694,7 +689,7 @@ table {
     }
 }
 
-@media screen and (min-height: 950px) {
+@media screen and (min-height: 900px) {
     .game-menu {
         height: calc(30vh - 50px);
     }
@@ -704,7 +699,7 @@ table {
     }
 
     .main-container {
-        padding-top: 10%;
+        padding-top: 15vh;
     }
 
     .table-container {
@@ -717,6 +712,10 @@ table {
 
     .player-info {
         padding-top: 20%;
+    }
+
+    .table-btn {
+        margin-top: 6vh;
     }
 }
 
