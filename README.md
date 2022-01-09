@@ -89,7 +89,7 @@ Basic colors are chosen for the website color scheme following the Super Mario g
  
 ##### 3. Logo
 
-<p style="text-align:center">
+<p>
    <img src="assets/images/mario-image.png" alt="Super Mario">
 </p>
 
@@ -173,7 +173,7 @@ When the screen gets smaller the navbar shrink into an icon, and they appear whe
 
 ![The homepage](assets/images/screenshot-homepage.png)
 
-The player is welcome just as the page is loaded. Some guides are displayed for new users. Two buttons are shown, one for the gaming table section and the other one is to create a player's profile to be shown in the webpage afterwards.
+The player is welcomed just as the page is loaded. Some guides are displayed for new users. Two buttons are shown, one for the gaming table section and the other one is to create a player's profile to be shown in the webpage afterwards.
 
 * Create a player form
 
@@ -191,15 +191,15 @@ The player's name is shown on top, and just below it are the current date, and t
 
 ![Start, stop and exit buttons](assets/images/screenshot-stop-button.png)
 
-There are three buttons below the table: the start button, the stop button, which is disabled to prevent accidental clicks and an exit button to go to the homepage. Can also click the heading from the header to go to the homepage and exit the game, but it is easier and intuitive to put an icon to exit game especially for first time user.
+There are three buttons below the table: the start button, the stop button, which is disabled to prevent accidental clicks and an exit button to go to the homepage.
 
-The start button is disabled once the game starts with the same purpose, to prevent accidental clicks which can create bugs in the script. On the contrary, the stop button is enabled to stop the game anytime the user wants.
+The start button is disabled once the game starts with the same purpose, to prevent accidental clicks which can create bugs in the script if not disabled. On the contrary, the stop button is enabled to stop the game anytime the user wants.
 
 * End game
 
 ![Game finish](assets/images/screenshot-finish-table.png)
 
-Once the game ends, the timer stops, a recount of how many correct number sequence are clicked and the start button is clickable again to start playing once again.
+Once the game ends, the timer stops. A recount of how many correct number sequence are clicked is displayed and the start button is enabled to start playing once again.
 
 ### Player's info
 
@@ -218,13 +218,13 @@ An icon is added below the two boxes. It is used to delete all the data stored i
 * Be able to store more players and view improvement in daily and weekly chart.
 * To set the table cells according to age. Less table for kids and more table cells for adults.
 * Be able to add game levels and increase difficulty to test user skill and the ability to concentrate.
-* Be able to set score according to the right clicked numbers.
+* Be able to set score according to the total correct numbers.
 
  
 ## Testing
- 
-The W3C Markup Validator, W3C CSS Validator and JShint JavaScript Validator was used to test and validate the webpage to make sure there are no errors or bugs.
-<p style="text-align:center;">
+
+The W3C Markup Validator, W3C Jigsaw CSS Validator and JShint JavaScript Validator was used to test and validate the webpage to make sure there are no errors or bugs.
+<p>
     <a href="https://jigsaw.w3.org/css-validator/check/referer">
         <img style="border:0;width:88px;height:31px;"
             src="https://jigsaw.w3.org/css-validator/images/vcss"
@@ -232,11 +232,11 @@ The W3C Markup Validator, W3C CSS Validator and JShint JavaScript Validator was 
     </a>
 </p>
 
-Manual testing was constantly carried out during the development of the webpage. Used the developers tools to see if there's some error in the code and styles. 
+Manual testing was constantly carried out during the development of the webpage. I used the developers tool to see if there's some error in the code and styles. 
 
 Deployed and tested if the game is working and fully functional.
 
-Tested on different devices to see how the game works. 
+Tested on different devices to see how the game works: laptop, tablets, and different phone devices. 
 
 Tested the game table if all functions are executing well. Timer goes well during game time. Retrieving data from the local storage to be used inside the webpage is working fine.
 
@@ -260,7 +260,7 @@ When tested the script through JShint, there was a warning about a function decl
 
 When I tried the game and selected incorrect number sequence first, the script got stuck during the splice method which makes all clicked numbers wrong even though the sequence is correct afterwards. I managed to make it right by changing the the code in the splice method. Instead of inserting the index number, it should insert the number currently clicked.
 
-Found an error from favicon icon when page is deployed. The icon wasn't showing because of the missing links in the head element. I manage to make it appear when the page is viewed from a browser.
+Found an error from the favicon icon when the page was deployed. The icon wasn't showing because of the missing links in the head element of the webpage. I manage to make the favicon appear when the page is viewed from a browser by adding the links.
 
 [Back to Top](#table-of-contents)
  
@@ -272,7 +272,9 @@ The first thing that is loaded in the site is a guide for first time players. It
 
 The instructions and game information is accesible from the home section and from the game table section. Included inside the instructions are recomendations for the user for better results.
 
-The form to create a player's profile is short, simple and intuitive, with placeholders to guide the user. Once opened the form, it's directly focused on the first input field, so that the user can easily type the required data. The birth year input area only accepts numbers. Both input fields require data before submitting form.
+The form to create a player's profile is short, simple and intuitive, with placeholders to guide the user. Once opened the form, it's directly focused on the first input field, so that the user can easily type the required data. The birth year input field only accepts numbers. Both input fields require data before submitting form.
+
+Included an exit button just below the schulte table. The player can also click the heading from the nav bar to go to the homepage and exit the game, but it is easier and intuitive to put an icon to exit the game, especially for first time user.
 
 All files are named according to their purpose. The code is labeled for easy access, and well indented for readability. All functions in the script are documented using docstrings for future maintainability and debugging.
 
@@ -290,7 +292,7 @@ This project is deployed in GitHub. Below are the steps on how to deploy a repos
 1. From the main page of the repository, select `Settings` in the menu bar just below the project’s name. 
 2. Within Settings, scroll down from the left hand side menu bar. Click `Page`.
 3. In the source section, change none to `main` from the dropdown branch options and click `Save`.
-4. A message prompts just above it, announcing your site is ready to be published.
+4. A message prompts just above it, announcing the site is ready to be published.
 5. Wait for a few seconds, and refresh the page.
 6. The message will change with a check mark stating the site is published. A link is provided to view the webpage.
 
@@ -323,7 +325,7 @@ This project is deployed in GitHub. Below are the steps on how to deploy a repos
 
 ### Media
 
-* All the images used as icons and background are my own illustrations created from MediBang paint based on the Super Mario games.
+* I created all the images used as icons and the background from MediBang paint based on the Super Mario games.
 
 
 [Back to Top](#table-of-contents)
@@ -333,7 +335,7 @@ This project is deployed in GitHub. Below are the steps on how to deploy a repos
 * To all the members of Team 11 🤜 (Marina, Anthony, Chris and Debbie) December Hackathon.
 * My mentor.
 * To all the tutors and the Slack Community for some guidance.
-* To my family and friends, and most of all my daughter, Sophia, my inspiration.
+* To my family and friends, and most especially to my daughter, Sophia, my inspiration.
 
  
 ###### <i>Disclaimer: This project was created for educational use only as part of my Portfolio Project 2</i>
