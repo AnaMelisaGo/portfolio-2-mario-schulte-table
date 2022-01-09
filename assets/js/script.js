@@ -378,6 +378,24 @@ function displayTimeFinish(){
     playCorrect.textContent = `${localStorage.getItem('Correct')} correct numbers!`
 }
 
+/**
+ * Function for the animation of the exit button when mouse is over
+ * Own code
+ */
+function openDoor() {
+    doorClose.classList.add('not-active');
+    doorOpen.classList.remove('not-active');
+}
+
+/**
+ * Function for the animation of the exit button when mouse is out
+ * Own code
+ */
+function closeDoor() {
+    doorClose.classList.remove('not-active');
+    doorOpen.classList.add('not-active');
+}
+
 // ------------------------------------------------ VARIABLES --------------------------------------
 // Nav bar
 let menuButton = document.getElementById('icon-game');
@@ -438,24 +456,10 @@ let playerAge = document.getElementById('player-age');
 let currentYear = playGame.dateToday.getFullYear();
 let playerBirthyear = localStorage.getItem('Birthyear');
 
-
-function openDoor() {
-    doorClose.classList.add('not-active');
-    doorOpen.classList.remove('not-active');
-}
-
-function closeDoor() {
-    doorClose.classList.remove('not-active');
-    doorOpen.classList.add('not-active');
-}
-
+// exit button
 let exitGame = document.getElementById('exit-game');
 let doorClose = document.getElementById('door-close');
-let doorOpen = document.getElementById('door-open')
-
-exitGame.addEventListener('mouseover', openDoor);
-exitGame.addEventListener('mouseout', closeDoor)
-
+let doorOpen = document.getElementById('door-open');
 
 // ------------------------------------------------ EVENT LISTENERS --------------------------------------
 showPlayerName();
@@ -475,3 +479,6 @@ removePlayer.addEventListener('click', clearStorage);
 
 document.getElementById('start').addEventListener('click', start);
 document.getElementById('stop').addEventListener('click', stop);
+
+exitGame.addEventListener('mouseover', openDoor);
+exitGame.addEventListener('mouseout', closeDoor);
