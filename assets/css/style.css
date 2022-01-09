@@ -257,7 +257,6 @@ header a {
     max-width: 100%;
     margin: 0 auto;
     padding-top: 20px;
-    /* background: rgba(255, 255, 0, 0.6); */
     display: none;
 }
 
@@ -304,7 +303,6 @@ table {
 }
 
 .game-table td{
-    /* background: var(--green); */
     border-radius: 5px;
     width: 50px;
     height: 40px;
@@ -456,6 +454,7 @@ table {
 }
 
 /* ---------------------------------------------- Player Info --------------------------- */
+/* Own code */
 .player-info {
     width: 500px;
     max-width: 100%;
@@ -464,6 +463,7 @@ table {
     display: none;
 }
 
+/* Own code */
 .play-display {
     display: flex;
     justify-content: space-between;
@@ -471,6 +471,7 @@ table {
     padding: 20px;
 }
 
+/* Own code */
 .msg-display {
     display: flex;
     justify-content: space-between;
@@ -478,6 +479,7 @@ table {
     padding: 20px;
 }
 
+/* Own code */
 .remove-player {
     width: fit-content;
     text-align: right;
@@ -487,14 +489,17 @@ table {
     padding: 10px;
 }
 
+/* Own code */
 .remove-player p {
     font-size: 10px;
 }
 
+/* Own code */
 .remove-player i {
     font-size: 1.5em;
 }
 
+/* Own code */
 .remove-player:hover {
     transform: scale(1.3);
     transition: 0.3s;
@@ -529,6 +534,8 @@ table {
     display: block;
 }
 
+/* Based on Web Dev Simplified */
+
 .ins-container {
     width: 500px;
     max-width: 100%;
@@ -538,16 +545,19 @@ table {
     z-index: 10;
 }
 
+/* Own code */
 .x-container {
     text-align: right;
     margin-bottom: 5px;
 }
 
+/* Own code */
 .x-container a {
     text-decoration: none;
     padding: 0 5px;
 }
 
+/* Own code */
 .x-container a:hover {
     /* From JavaScript Academy tutorials */
     transform: scale(1.1);
@@ -555,26 +565,31 @@ table {
     box-shadow: 4px 4px 8px var(--transparent-black); 
 }
 
+/* Own code */
 .btn-x {
     color: white;
     font-size: 20px;
     background: var(--yellow);
 }
 
+/* Own code */
 .ins-container div:not(:first-child) {
     margin-bottom: 20px;
 }
 
+/* Own code */
 .ins-container h2 {
     padding-bottom: 10px;
 }
 
+/* Own code */
 .ins-container ul, ol {
     width: 85%;
     display: block;
     margin: 0 auto;
 }
 
+/* Own code */
 .btn-y {
     color: white;
     font-size: 20px;
