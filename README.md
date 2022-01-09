@@ -260,6 +260,8 @@ When tested the script through JShint, there was a warning about a function decl
 
 When I tried the game and selected incorrect number sequence first, the script got stuck during the splice method which makes all clicked numbers wrong even though the sequence is correct afterwards. I managed to make it right by changing the the code in the splice method. Instead of inserting the index number, it should insert the number currently clicked.
 
+Found an error from favicon icon when page is deployed. The icon wasn't showing because of the missing links in the head element. I manage to make it appear when the page is viewed from a browser.
+
 [Back to Top](#table-of-contents)
  
 #### Defensive Design
