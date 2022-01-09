@@ -32,7 +32,9 @@
  
 ## What does it do and what does it need to fulfill?
 
-Mario Schulte Table is a game website to train the brain. It is mainly used to upgrade the user's reading skills to a higher level. Exercises with schulte tables is very benefitial to improve peripheral visual perception that can be useful on a daily basis, most importantly in aiming speed reading. The goal of the game is not to get a high score nor to finish it in the least amount of time. It's aimed to widen the peripheral vision concentrating the eye in one single spot in the table. Just in the center of the table without moving the eye away from that spot.
+Mario Schulte Table is a gaming website for brain training. It is mainly used to upgrade the user's reading skills to a higher level. Exercises with schulte tables is very benefitial to any users which improves peripheral visual perception that can be useful on a daily basis, most importantly in aiming speed reading. For younger users it can be very useful in learning the proper sequence of numbers or letters.
+
+The very goal of the game is not to get a high score nor to finish it in the least amount of time. It's aimed to widen the peripheral vision concentrating the eye in one single spot in the table. Just keeping the eye in the center of the table without moving it away from that spot and search for the numbers in ascending order, starting from 1 up to the last number which is the number 25.
 
 ### Favicon
 This is the favicon used in this project.
@@ -41,7 +43,7 @@ This is the favicon used in this project.
  
 ### Functionality of Project
 
-To play games while training the brain to maintain the brain in good condition, to add player's name and age to track player's progress.
+To play games while training the brain to maintain it in good working condition. It is also for speed reading, training the eye using peripheral vision when searching objects or reading texts, to add the player's name and age to be able to track the user's progress.
 
 
 [Back to top](#table-of-contents)
@@ -53,16 +55,16 @@ _Generic (Guest/Public) User:_
 * As a Generic User, I want to...
    * use applications for every age and gender.
    * train the brain by playing.
-   * be guided how to navigate website.
-   * to be given some instructions how to play the game
+   * be guided how to navigate the website.
+   * to be given some instructions how to play the game for the first time.
 
  
 _Registers (Logged in) User:_
 * As a Registered User, I want to...
-   * to improve reading skills and concentration everyday
-   * to continuously train the eye peripheral vision
-   * be able to view daily achievements to see one's improvement
-   * to increase level to gain a better outcome
+   * improve reading skills and concentration everyday.
+   * continuously train the eye peripheral vision.
+   * be able to view daily achievements to see one's improvement.
+   * increase level to gain a better outcome.
  
 _Developer:_
 * As a Developer, I want to...
@@ -76,12 +78,12 @@ _Developer:_
  
 ##### 1. Font
 The font used in the website is from Google fonts:
-   * __Bungee__ for the heading
+   * __Bungee__ for the headings.
    * __Orbitron__ for the rest of the text to give it some vintage gaming vibes 
 
  
 ##### 2. Color Scheme
-Basic colors are chosen for the website color scheme following the colors from the Super Mario games: red, blue, green, yellow, white and black.
+Basic colors are chosen for the website color scheme following the Super Mario game style: red, blue, green, yellow, black, and white.
  
 ![Color Scheme](assets/images/mario-color-scheme.png)
  
@@ -89,7 +91,7 @@ Basic colors are chosen for the website color scheme following the colors from t
 
 ![Super Mario](assets/images/mario-image.png)
 
-The chosen logo for this project is the main character from the Super Mario game, Mario himself. I added some more icon logos for the buttons of the main page of the game: the mystery box and the Super mushroom. I used digital illustration app to make all the logos.
+The chosen logo for this project is the main character from the Super Mario games, Mario himself. I added some more icon logos for the buttons of the main page of the game: the mystery box and the Super mushroom. I used digital illustration app to make all the logos.
 
 I chose the main heading of the game as the home button to make it simpler.
  
@@ -118,7 +120,7 @@ The schulte table
 ### Languages, Libraries, Frameworks, Editors & Version Control:
 
 * Tech stack used
-   * __[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) (HyperText Markup Language)__ for the basic structure and content for building a website.
+   * __[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) (HyperText Markup Language)__ for the basic structure and content of the website.
 
    * __[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) (Cascading Style Sheet)__ for styling the elements of the website.
 
@@ -127,15 +129,15 @@ The schulte table
 * Version control
    - **GIT** for version control.
 
-   - [GITHUB](https://github.com) to store the project and deployment.
+   - __[GITHUB](https://github.com)__ to store the project and deployment.
 
 * Editor
 
-   - [Gitpod](https://gitpod.com) is used as the editor for this project.
+   - __[Gitpod](https://gitpod.com)__ is used as the editor for this project.
 
 * Libraries and frameworks
 
-   - [FontAwesome](https://fontawesome.com/v5.15/icons/bars?style=solid) for the icon used in the navbar.
+   - [FontAwesome](https://fontawesome.com/v5.15/icons/bars?style=solid) for the icons used through out the website.
 
    - [GoogleFonts](https://fonts.google.com/) used to style the texts of this project.
 
@@ -178,29 +180,33 @@ Tested theLighthouse Accessibility performance. Below is the result.
  
 During manual testing, I found out that when the stop button was clicked, the game didn’t reset. Had to add a function to reset data from the start.
 
-When I tried to set up the input form from index.html, there was a conflict in JavaScript. It couldn’t execute the rest of the codes from the script file for table.html and the index.html. I had to include the table section into the index file to make the script execute. I managed to make it work using event listeners. When a button is clicked a section is shown and the other is hidden. 
+When I tried to set up the input form from index.html, there was a conflict in JavaScript. It couldn’t execute the rest of the codes from the script file for table.html and the index.html. I had to join the table file and the index file to make the script execute. I managed to make it work using event listeners. When a button is clicked a section is shown and the other is hidden. 
 
-The player name is shown in different part of the page: in the navbar, in the home page and above the game table. But during execution I found a bug when trying to access the player’s data. I manage to make the name of the player show in different parts of the page by using the for loop and then assigning the value of player data from the local storage.
+The player name is shown in different part of the page: in the navbar, in the home page and above the game table. But during execution I found a bug when trying to access the player’s data. I manage to make the name of the player show in different parts of the page by using the for loop, store the data in local storage and then assigning the value of the player's name from the local storage.
 
-When the game has started, the timer doesn't stop when accidentally clicked the start button and though the stop button is clicked the timer keeps on going. I managed to fix it by adding a disable attribute to the button that is not needed during play time.
+When the game has started, the timer doesn't stop when accidentally clicked the start button and even though the stop button is clicked the timer keeps on going. I managed to fix it by adding a disable attribute to the button that is not needed during play time.
 
-When tested the script through JShint, there was a warning about a function declared inside a for loop referencing an outer scope can lead to consfusing semantics.
-<!-- need to restate the function.. how?? -->
-
+When tested the script through JShint, there was a warning about a function declared inside a for loop referencing an outer scope can lead to consfusing semantics. It's a function inside the filter method. I check it with my mentor. I ignored the warning since it's not really affecting the proper performance of the script.
 
 [Back to Top](#table-of-contents)
  
 #### Defensive Design
  
-The first thing that is loaded in the site is a guide for first time players.
+The design of the website has a touch of vintage gaming vibes to attract users especially those who are into vintage games.
 
-The form to create a player's profile is short, simple and intuitive, with placeholders for the user. The birth year input area only accepts numbers. 
+The first thing that is loaded in the site is a guide for first time players. It's short and easy to read.
+
+The instructions and game information is accesible from the home section and the game table section. Included inside the instructions are recomendations when playing.
+
+The form to create a player's profile is short, simple and intuitive, with placeholders for the user. The birth year input area only accepts numbers. Both input requires data to be entered before submitting form.
 
 All files are named according to their purpose. The code is labeled for easy access and well indented for readability. All functions in the script are documented using docstrings for future maintainability and debugging.
 
-Images use alt text in case they don't load. Tested and deployed.
+All images use alt text in case they don't load.
 
-Overall, the design is simple, easy to navigate and with a touch of vintage gaming vibes to attract more users.
+The player info section displays the last game result, with the date when it was played. It's all stored in local storage but can be deleted using a button provided for the user.
+
+Overall, the design is simple, easy to navigate and with a touch of vintage gaming vibes.
 
  
 ## Deployment
