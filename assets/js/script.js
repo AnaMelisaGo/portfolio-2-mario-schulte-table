@@ -1,4 +1,4 @@
-//======================================================= FUNCTIONS
+// ------------------------------------------------ FUNCTIONS --------------------------------------
 /**
  * A function to toggle between class
  * for responsive navigation bar
@@ -20,6 +20,7 @@
     tableSection.classList.add('active');
     homeSection.classList.add('not-active');
     displayDate();
+    showPlayerName();
 }
 
 /**
@@ -97,6 +98,26 @@ function closePlayerForm() {
         } else {
             player.innerHTML = 'Player';
         }
+    }
+}
+
+/**
+ * Function to calculate the age of the player
+ * Own code
+ */
+ function calcAge() {
+    return currentYear - playerBirthyear;
+}
+
+/**
+ * Function to show players age
+ * Own code
+ */
+function showPlayerAge() {
+    if (playerBirthyear === null) {
+        playerAge.textContent = `Age: ?`;
+    } else {
+        playerAge.textContent = `Age: ${calcAge()} years old`;
     }
 }
 
@@ -201,7 +222,7 @@ function displayDate() {
         playGame.currentSelectedNum = this.innerHTML;
         console.log(playGame.currentSelectedNum);
 
-        //2 - check if a number is clicked again
+        //2 - ignores number if number is clicked again
         if (playGame.selectedNum.includes(parseInt(playGame.currentSelectedNum))) {
             continue;
         }
@@ -225,10 +246,10 @@ function displayDate() {
             this.style.background = 'var(--red)';
         }
 
+        // 5 - When clicked the last table cell
         if (playGame.selectedNum.indexOf(parseInt(playGame.currentSelectedNum)) + 1 === playGame.tableCells.length) {
             endGame();
-            //clearData();
-            document.getElementById('start').textContent = `Start again?`;
+            startButton.textContent = `Start again?`;
         }
     }
 }
@@ -257,11 +278,10 @@ function displayDate() {
     });
 
     // From codegrepper.com, to disable and remove disable attribute
-    document.getElementById('stop').disabled = false;
-    document.getElementById('start').disabled = true;
-
-    document.getElementById('stop').style.background = 'var(--red)';
-    document.getElementById('start').style.background = 'none';
+    stopButton.disabled = false;
+    startButton.disabled = true;
+    stopButton.style.background = 'var(--red)';
+    startButton.style.background = 'none';
     document.getElementById('center-cell').style.border = '4px solid var(--blue)';
 }
 
@@ -281,8 +301,8 @@ function displayDate() {
         playGame.currentSelectedNum = '';
         playGame.correctNum = [ ];
     }
-    document.getElementById('stop').style.background = 'initial';
-    document.getElementById('start').style.background = 'var(--green)';
+    stopButton.style.background = 'initial';
+    startButton.style.background = 'var(--green)';
     document.getElementById('center-cell').style.border = 'none';
 }
 
@@ -295,7 +315,8 @@ function displayDate() {
     clearData();
     cron = setInterval(() => { tableTimer(); }, 10);
     gameStart();
-    document.getElementById('finish-msg').innerHTML = ``;
+
+    finishMsg.innerHTML = '';
 }
 
 /**
@@ -308,19 +329,19 @@ function stop() {
     minute = 0;
     second = 0;
     millisecond = 0;
+    
+    let min = document.getElementById('minute').innerText;
+    let sec = document.getElementById('seconds').innerText;
+    min = '00';
+    sec = '00';
+    document.getElementById('milliseconds').innerText = '00';
+    finishMsg.innerHTML = `Game stopped at ${min} min and ${sec} sec!`;
+    alert(`Oops! you stopped the game!`);
 
     clearData();
 
-    let min = document.getElementById('minute').innerText;
-    let sec = document.getElementById('seconds').innerText;
-    document.getElementById('finish-msg').innerHTML = `Game stopped at ${min} min and ${sec} sec!`;
-    document.getElementById('minute').innerText = '00';
-    document.getElementById('seconds').innerText = '00';
-    document.getElementById('milliseconds').innerText = '00';
-    alert(`Oops! you stopped`);
-
-    document.getElementById('stop').disabled = true;
-    document.getElementById('start').disabled = false;
+    stopButton.disabled = true;
+    startButton.disabled = false;
 }
 
 /**
@@ -329,6 +350,7 @@ function stop() {
  */
 function endGame() {
     clearInterval(cron);
+    
     let min = document.getElementById('minute').innerText;
     let sec = document.getElementById('seconds').innerText;
     let correctNumb = playGame.correctNum.length;
@@ -338,32 +360,12 @@ function endGame() {
     localStorage.setItem('Correct', correctNumb);
     localStorage.setItem('Date', date);
 
-    document.getElementById('finish-msg').innerHTML = `${correctNumb} correct numbers`;
-    alert('Finished');
-    document.getElementById('stop').disabled = true;
-    document.getElementById('start').disabled = false;
-    document.getElementById('start').style.background = 'var(--green)';
-    document.getElementById('stop').style.background = 'initial';
-    displayTimeFinish();
-}
-
-/**
- * Function to calculate the age of the player
- * Own code
- */
-function calcAge() {
-    return currentYear - playerBirthyear;
-}
-
-/**
- * 
- */
-function showPlayerAge() {
-    if (playerBirthyear === null) {
-        playerAge.textContent = `Age: ?`;
-    } else {
-        playerAge.textContent = `Age: ${calcAge()} years old`;
-    }
+    finishMsg.innerHTML = `${correctNumb} correct numbers`;
+    alert(`Finished game for ${min} min and ${sec} sec!`);
+    stopButton.disabled = true;
+    startButton.disabled = false;
+    startButton.style.background = 'var(--green)';
+    stopButton.style.background = 'initial';
 }
 
 /**
@@ -376,6 +378,7 @@ function displayTimeFinish(){
     playCorrect.textContent = `${localStorage.getItem('Correct')} correct numbers!`
 }
 
+// ------------------------------------------------ VARIABLES --------------------------------------
 // Nav bar
 let menuButton = document.getElementById('icon-game');
 
@@ -409,6 +412,7 @@ let second = 0;
 let millisecond = 0;
 let cron;
 
+
 // Play game Data
 let playGame = {
     dateToday: new Date(),
@@ -421,6 +425,11 @@ let playGame = {
     correctNum: [ ],
 };
 
+// Start and stop button
+let startButton = document.getElementById('start');
+let stopButton = document.getElementById('stop');
+let finishMsg = document.getElementById('finish-msg');
+
 // date, local storage and age
 let playDate = document.getElementById('play-date');
 let playMessage = document.getElementById('play-msg');
@@ -429,8 +438,27 @@ let playerAge = document.getElementById('player-age');
 let currentYear = playGame.dateToday.getFullYear();
 let playerBirthyear = localStorage.getItem('Birthyear');
 
-showPlayerName();
 
+function openDoor() {
+    doorClose.classList.add('not-active');
+    doorOpen.classList.remove('not-active');
+}
+
+function closeDoor() {
+    doorClose.classList.remove('not-active');
+    doorOpen.classList.add('not-active');
+}
+
+let exitGame = document.getElementById('exit-game');
+let doorClose = document.getElementById('door-close');
+let doorOpen = document.getElementById('door-open')
+
+exitGame.addEventListener('mouseover', openDoor);
+exitGame.addEventListener('mouseout', closeDoor)
+
+
+// ------------------------------------------------ EVENT LISTENERS --------------------------------------
+showPlayerName();
 menuButton.addEventListener('click', toggleGameMenu);
 
 playButton.addEventListener('click', displayGame);

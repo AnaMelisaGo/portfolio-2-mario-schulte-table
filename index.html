@@ -173,6 +173,14 @@
             <div name="form-btn" class="table-btn st-cont" id="btn-table">
                 <button type="button" name="start" id="start" class="t-btn">Start</button>
                 <button type="button" name="stop" id="stop" class="t-btn" disabled>Stop</button>
+                <div id="exit-game">
+                    <a href="index.html" id="door-close">
+                        <i class="fas fa-door-closed"></i>
+                    </a>
+                    <a href="index.html" class="not-active" id="door-open">
+                        <i class="fas fa-door-open"></i>
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -183,9 +191,11 @@
                 <p id="player-age"></p>
             </div>
             <div class="text-container msg-display">
-                    <p id="play-date">Date:</p>
-                    <p id="play-msg">Msg: no data</p>
-                    <p id="play-correct">No data</p>
+                    <div id="play-date">Date:</div>
+                    <div>
+                        <p id="play-msg">Msg: no data</p>
+                        <p id="play-correct">No data</p>
+                    </div>
             </div>
             <div class="remove-player">
                 <i class="fas fa-trash-alt" id="remove-player-icon"></i>
