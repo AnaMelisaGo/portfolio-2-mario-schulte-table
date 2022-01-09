@@ -32,7 +32,7 @@
  
 ## What does it do and what does it need to fulfill?
 
-Mario Schulte Table is a gaming website for brain training. It is mainly used to upgrade the user's reading skills to a higher level. Exercises with schulte tables is very benefitial to any users which improves peripheral visual perception that can be useful on a daily basis, most importantly in aiming speed reading. For younger users it can be very useful in learning the proper sequence of numbers or letters.
+Mario Schulte Table is a gaming website for brain training. It is mainly used to upgrade the user's reading skills to a higher level. Exercises with schulte tables is very benefitial to any users which improves peripheral visual perception that can be useful on a daily basis, most importantly in aiming speed reading. For younger users it can be very useful in learning the proper sequence of numbers or the alphabet.
 
 The very goal of the game is not to get a high score nor to finish it in the least amount of time. It's aimed to widen the peripheral vision concentrating the eye in one single spot in the table. Just keeping the eye in the center of the table without moving it away from that spot and search for the numbers in ascending order, starting from 1 up to the last number which is the number 25.
 
@@ -93,13 +93,13 @@ Basic colors are chosen for the website color scheme following the Super Mario g
    <img src="assets/images/mario-image.png" alt="Super Mario">
 </p>
 
-The chosen logo for this project is the main character from the Super Mario games, Mario himself. I added some more icon logos for the buttons of the main page of the game: the mystery box and the Super mushroom. I used digital illustration app to make all the logos.
+The chosen logo for this project is the main character from the Super Mario games, Mario himself. I added some more icon logos for the buttons of the main page of the game: [the mystery box](assets/images/question-block.png) and the [Super mushroom](assets/images/super-mashroom.png), which is the favicon used in this project. I used digital illustration app to make all the logos.
 
 ##### 4. Geometry
  
 The main purpose of the game is to force the eye to concentrate in one spot, which is the center of the table, so the game table has to stay at the center of the screen to focus the eye so the user doesn't get distracted by the background or any other element of the page.
 
-The background is from the Super Mario main setting. It wraps the whole table but is not stretched out to maintain the purpose of the game. It’s illustrated using a digital application software, MediBang, and the colors are softened up a bit so that it doesn’t come into conflict with the foreground elements. 
+The background is from the Super Mario main setting. It wraps the whole table but is not stretched out to maintain the purpose of the game. It’s illustrated using a digital illustration app, MediBang, and the colors are softened up a bit so that it doesn’t come into conflict with the foreground elements. 
 
  
 ##### 5. Wireframing
@@ -128,7 +128,7 @@ The schulte table
 * Version control
    - **GIT** for version control.
 
-   - __[GITHUB](https://github.com)__ to store the project and deployment.
+   - __[GITHUB](https://github.com)__ to store the project and for deployment.
 
 * Editor
 
@@ -173,7 +173,7 @@ When the screen gets smaller the navbar shrink into an icon, and they appear whe
 
 ![The homepage](assets/images/screenshot-homepage.png)
 
-The player is welcome just as the page is loaded. Some guides are displayed for new users. Two buttons are shown, one for the gaming table section and the other one is to create a player's profile to access the players achievements.
+The player is welcome just as the page is loaded. Some guides are displayed for new users. Two buttons are shown, one for the gaming table section and the other one is to create a player's profile to be shown in the webpage afterwards.
 
 * Create a player form
 
@@ -184,7 +184,8 @@ The form is very simple and short. To create a player's profile, a name and the 
 ### The Schulte table
 
 ![The game table](assets/images/screenshot-game-table.png)
-The player name is shown on top, and just below it are the current date, and the timer.
+
+The player's name is shown on top, and just below it are the current date, and the timer.
 
 * The buttons
 
@@ -197,6 +198,7 @@ The start button is disabled once the game starts with the same purpose, to prev
 * End game
 
 ![Game finish](assets/images/screenshot-finish-table.png)
+
 Once the game ends, the timer stops, a recount of how many correct number sequence are clicked and the start button is clickable again to start playing once again.
 
 ### Player's info
@@ -205,7 +207,7 @@ Once the game ends, the timer stops, a recount of how many correct number sequen
 
 The player's name and age are displayed on top of the page.
 
-The next box are the data from the last game result. It shows the date, how long did the player finished the game and the total correct numbers.
+The box under it are the data from the last game result. It shows the date, how long did the player finished the game and the total correct numbers.
 
 An icon is added below the two boxes. It is used to delete all the data stored in the local storage to create a new player afterwards.
  
@@ -240,6 +242,8 @@ Tested the game table if all functions are executing well. Timer goes well durin
 
 Tested theLighthouse Accessibility performance. Below is the result.
 
+![Lighthouse Result](assets/images/screenshot-lighthouse.png)
+
 [Back to Top](#table-of-contents)
  
 #### Found Bugs and Fixes:
@@ -248,9 +252,9 @@ During manual testing, I found out that when the stop button was clicked, the ga
 
 When I tried to set up the input form from index.html, there was a conflict in JavaScript. It couldn’t execute the rest of the codes from the script file for table.html and the index.html. I had to join the table file and the index file to make the script execute. I managed to make it work using event listeners. When a button is clicked a section is shown and the other is hidden. 
 
-The player name is shown in different part of the page: in the navbar, in the home page, in the player's info section and above the game table. But during the first execution I found a bug when trying to access the player’s data. I manage to make the name of the player show in different parts of the page by using loop in the class name, and then assigning the value of the player's name stored from the local storage.
+The player's name is shown in different part of the page: in the navbar, in the home page, in the player's info section and above the game table. But during the first execution I found a bug when trying to access the player’s data. I manage to make the name of the player show in different parts of the page by using loop in the class name, and then assigning the value of the player's name from the local storage.
 
-When the game has started, the timer doesn't stop when accidentally clicked the start button and even though the stop button is clicked the timer keeps on going. I managed to fix it by adding a disable attribute to the button that is not needed during play time.
+When the game has started, the timer doesn't stop when accidentally clicked the start button and even though the stop button is clicked the timer keeps on going. I managed to fix it by adding a disable attribute to the button that is not needed during play time, and vice versa.
 
 When tested the script through JShint, there was a warning about a function declared inside a for loop referencing an outer scope can lead to consfusing semantics. It's a function inside the filter method. I check it with my mentor. I managed to get rid of the warning by not using the variable outside the bracket.
 
@@ -266,13 +270,13 @@ The first thing that is loaded in the site is a guide for first time players. It
 
 The instructions and game information is accesible from the home section and from the game table section. Included inside the instructions are recomendations for the user for better results.
 
-The form to create a player's profile is short, simple and intuitive, with placeholders to guide the user. Once opened the form, it's directly focused on the first input field, so that the user can easily type the required data. The birth year input area only accepts numbers. Both input requires data before submitting form.
+The form to create a player's profile is short, simple and intuitive, with placeholders to guide the user. Once opened the form, it's directly focused on the first input field, so that the user can easily type the required data. The birth year input area only accepts numbers. Both input fields require data before submitting form.
 
 All files are named according to their purpose. The code is labeled for easy access, and well indented for readability. All functions in the script are documented using docstrings for future maintainability and debugging.
 
 All images use alt text in case they don't load.
 
-The player info section displays the last game result, with the date when it was played. It's all stored in local storage but can be deleted using a button provided for the user.
+The player's info section displays the last game result, with the date when it was played. They are all stored in the local storage but can be deleted using a button provided for the user.
 
 Overall, the design is simple, easy to navigate and with a touch of vintage gaming vibes.
 
@@ -286,7 +290,7 @@ This project is deployed in GitHub. Below are the steps on how to deploy a repos
 3. In the source section, change none to `main` from the dropdown branch options and click `Save`.
 4. A message prompts just above it, announcing your site is ready to be published.
 5. Wait for a few seconds, and refresh the page.
-6. The message will change with a check mark stating the site is published and a link is provided.
+6. The message will change with a check mark stating the site is published. A link is provided to view the webpage.
 
  
 [Back to Top](#table-of-contents)
@@ -306,7 +310,7 @@ This project is deployed in GitHub. Below are the steps on how to deploy a repos
 * W3schools
 * Stackoverflow
 * [Better Dev](https://www.better.dev/javascript-array-filter-method) for the filter method of array guide.
-* [Walter Nascimento](https://dev.to/walternascimentobarroso/creating-a-timer-with-javascript-8b7) for setting the timer tutorial from dev.to.
+* [Walter Nascimento](https://dev.to/walternascimentobarroso/creating-a-timer-with-javascript-8b7) for the timer tutorial from dev.to website.
 * [Code grepper](https://www.codegrepper.com/code-examples/javascript/remove+button+disabled+js) for the disabled attribute guide.
 * [Web Dev Simplified](https://youtu.be/MBaw_6cPmAw) for the video tutorial how to create a modal.
 
@@ -324,8 +328,9 @@ This project is deployed in GitHub. Below are the steps on how to deploy a repos
  
 #### Special Thanks & Acknowledgements:
  
-* To all the members of Team 11 🤜 (Marina, Anthony, Chris and Debbie) December Hackathon
-* My mentor
+* To all the members of Team 11 🤜 (Marina, Anthony, Chris and Debbie) December Hackathon.
+* My mentor.
+* To all the tutors and the Slack Community for some guidance.
 * To my family and friends, and most of all my daughter, Sophia, my inspiration.
 
  
